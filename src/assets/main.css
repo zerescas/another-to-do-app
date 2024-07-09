@@ -1,0 +1,27 @@
+@import url('./roboto.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto';
+}
+
+html,
+body,
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  color: #2e2e2e;
+  background-color: #f3f3f3;
+}
+
+@media (prefers-color-scheme: dark) {
+  #app {
+    color: #f3f3f3;
+    background-color: #242424;
+  }
+}
