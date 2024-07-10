@@ -17,8 +17,8 @@ const props = defineProps({
     class="button"
     @click="settings.onClick"
     :style="`
-        --accent-color: ${settings.color};
-        --accent-color-hover: ${settings.hoverColor};
+        --accent-color: var(${settings.color});
+        --accent-color-hover: var(${settings.hoverColor});
       `"
   >
     <div class="header">{{ settings.header }}</div>

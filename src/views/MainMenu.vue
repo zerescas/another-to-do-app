@@ -1,23 +1,26 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import Button from '../components/MainMenu/Button.vue';
 import SmallButton from '../components/MainMenu/SmallButton.vue';
 import IconSettings from '../components/icons/IconSettings.vue';
 import IconAbout from '../components/icons/IconAbout.vue';
 
+const router = useRouter();
+
 const buttons = ref([
   {
     header: 'Tasks',
     tip: 'Write down your plans and assign them to a project later',
-    color: '#FFBF85',
-    hoverColor: '#EDB27C',
-    onClick: () => alert('Clicked1!'),
+    color: '--tasks-accent-color',
+    hoverColor: '--tasks-accent-color-hover',
+    onClick: () => router.push({ name: 'tasks' }),
   },
   {
     header: 'Projects',
     tip: 'Create and categorize your tasks by projects',
-    color: '#90D7FF',
-    hoverColor: '#7CB9DB',
+    color: '--projects-accent-color',
+    hoverColor: '--projects-accent-color-hover',
     onClick: () => alert('Clicked2!'),
   },
 ]);

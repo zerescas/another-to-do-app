@@ -11,6 +11,12 @@
   --dark-theme-fg: var(--light-theme-bg);
   --dark-theme-fg-hover: var(--light-theme-bg-hover);
 
+  --tasks-accent-color: #ffbf85;
+  --tasks-accent-color-hover: #edb27c;
+
+  --projects-accent-color: #90d7ff;
+  --projects-accent-color-hover: #7cb9db;
+
   color-scheme: only light;
 }
 
