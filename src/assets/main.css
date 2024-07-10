@@ -1,5 +1,19 @@
 @import url('./roboto.css');
 
+:root {
+  --light-theme-bg: #f3f3f3;
+  --light-theme-bg-hover: #c9c9c9;
+  --light-theme-fg: #1d1d1d;
+  --light-theme-fg-hover: #3b3b3b;
+
+  --dark-theme-bg: var(--light-theme-fg);
+  --dark-theme-bg-hover: var(--light-theme-fg-hover);
+  --dark-theme-fg: var(--light-theme-bg);
+  --dark-theme-fg-hover: var(--light-theme-bg-hover);
+
+  color-scheme: only light;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,13 +29,13 @@ body,
 }
 
 #app {
-  color: #2e2e2e;
-  background-color: #f3f3f3;
+  color: var(--light-theme-fg);
+  background-color: var(--light-theme-bg);
 }
 
 @media (prefers-color-scheme: dark) {
   #app {
-    color: #f3f3f3;
-    background-color: #242424;
+    color: var(--dark-theme-fg);
+    background-color: var(--dark-theme-bg);
   }
 }
