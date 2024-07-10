@@ -40,6 +40,14 @@ const props = defineProps({
   background-color: var(--light-theme-fg-hover);
 }
 
+.button>* {
+  transition: .35s ease-in;
+}
+
+.button:hover>* {
+  transform: rotate(180deg);
+}
+
 .header {
   font-size: 24px;
   margin-bottom: 4px
