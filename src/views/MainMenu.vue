@@ -11,14 +11,14 @@ const router = useRouter();
 
 const buttons = ref([
   {
-    header: 'Tasks',
+    title: 'Tasks',
     tip: 'Write down your plans and assign them to a project later',
     color: '--tasks-accent-color',
     hoverColor: '--tasks-accent-color-hover',
     onClick: () => router.push({ name: 'tasks' }),
   },
   {
-    header: 'Projects',
+    title: 'Projects',
     tip: 'Create and categorize your tasks by projects',
     color: '--projects-accent-color',
     hoverColor: '--projects-accent-color-hover',
@@ -30,9 +30,9 @@ const buttons = ref([
 <template>
   <div class="menu-container">
     <div class="menu-wrapper">
-      <h1 class="header">
-        <span class="header-intro">Look, this is</span><br />
-        <span class="header-app-name">
+      <h1 class="title">
+        <span class="title-intro">Look, this is</span><br />
+        <span class="title-app-name">
           Another To Do App
           <AbstractDecorator />
         </span>
@@ -41,7 +41,7 @@ const buttons = ref([
       <div class="buttons-list">
         <Button
           v-for="button in buttons"
-          :key="button.header"
+          :key="button.title"
           :settings="button"
         ></Button>
       </div>
@@ -73,24 +73,24 @@ const buttons = ref([
 .menu-wrapper {
   display: grid;
   grid-template-areas:
-  'header         buttons-list'
+  'title              buttons-list'
   'small-buttons-list buttons-list';
   column-gap: 150px;
 }
 
-.header {
-  grid-area: header;
+.title {
+  grid-area: title;
   align-self: flex-end;
   font-size: 38px;
   font-weight: normal;
   margin-bottom: 20px;
 }
 
-.header-intro {
+.title-intro {
   font-weight: 600;
 }
 
-.header-app-name {
+.title-app-name {
   position: relative;
   font-weight: 300;
 }
@@ -113,7 +113,7 @@ const buttons = ref([
     display: block;
   }
 
-  .header {
+  .title {
     font-size: 32px;
     margin-right: 0;
     margin-bottom: 50px;
@@ -129,8 +129,8 @@ const buttons = ref([
 }
 
 @media (prefers-color-scheme: dark) {
-  .header-app-name::before,
-  .header-app-name::after {
+  .title-app-name::before,
+  .title-app-name::after {
     background-color: var(--dark-theme-fg);
   }
 }
