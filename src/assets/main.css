@@ -1,4 +1,5 @@
 @import url('./roboto.css');
+@import url(./custom-checkbox.css);
 
 :root {
   --light-theme-bg: #f3f3f3;
