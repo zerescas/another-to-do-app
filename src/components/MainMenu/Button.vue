@@ -6,7 +6,7 @@ const props = defineProps({
     type: Object,
     required: true,
     validator: (value: Object) => {
-      return 'header' in value && 'tip' in value && 'onClick' in value;
+      return 'title' in value && 'tip' in value && 'onClick' in value;
     }
   }
 });
@@ -21,7 +21,7 @@ const props = defineProps({
         --accent-color-hover: var(${settings.hoverColor});
       `"
   >
-    <div class="header">{{ settings.header }}</div>
+    <div class="title">{{ settings.title }}</div>
     <div class="tip">{{ settings.tip }}</div>
   </button>
 </template>
@@ -46,7 +46,7 @@ const props = defineProps({
   box-shadow: 0px 0px 15px var(--color);
 }
 
-.header {
+.title {
   font-size: 26px;
   margin-bottom: 6px
 }
@@ -61,7 +61,7 @@ const props = defineProps({
     padding: 24px;
   }
 
-  .header {
+  .title {
     font-size: 24px;
     margin-bottom: 4px
   }
