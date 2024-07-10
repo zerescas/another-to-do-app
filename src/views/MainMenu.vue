@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import AbstractDecorator from '../components/AbstractDecorator.vue';
 import Button from '../components/MainMenu/Button.vue';
 import SmallButton from '../components/MainMenu/SmallButton.vue';
 import IconSettings from '../components/icons/IconSettings.vue';
@@ -31,7 +32,10 @@ const buttons = ref([
     <div class="menu-wrapper">
       <h1 class="header">
         <span class="header-intro">Look, this is</span><br />
-        <span class="header-app-name">Another To Do App</span>
+        <span class="header-app-name">
+          Another To Do App
+          <AbstractDecorator />
+        </span>
       </h1>
 
       <div class="buttons-list">
@@ -89,22 +93,6 @@ const buttons = ref([
 .header-app-name {
   position: relative;
   font-weight: 300;
-}
-
-.header-app-name::before,
-.header-app-name::after {
-  position: absolute;
-  left: 100%;
-  top: -5px;
-  width: 2px;
-  height: 15px;
-  background-color: var(--light-theme-fg);
-  content: '';
-  transform: rotate(-45deg);
-}
-
-.header-app-name::after {
-  transform: rotate(45deg);
 }
 
 .buttons-list {
