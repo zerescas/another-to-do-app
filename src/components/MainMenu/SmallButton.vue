@@ -20,20 +20,18 @@ const props = defineProps({
 
 <style scoped>
 .button {
-  width: 54px;
-  height: 54px;
-
-  display: flex;
-  justify-content: center;
   align-items: center;
-
   background-color: var(--light-theme-fg);
-  color: var(--light-theme-bg);
-  border-radius: 16px;
-  text-align: left;
   border: none;
+  border-radius: 16px;
+  color: var(--light-theme-bg);
   cursor: pointer;
+  display: flex;
+  height: 54px;
+  justify-content: center;
+  text-align: left;
   transition: .15s ease-in;
+  width: 54px;
 }
 
 .button:hover {
