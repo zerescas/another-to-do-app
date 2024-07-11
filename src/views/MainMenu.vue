@@ -13,15 +13,15 @@ const buttons = ref([
   {
     title: 'Tasks',
     tip: 'Write down your plans and assign them to a project later',
-    color: '--tasks-accent-color',
-    hoverColor: '--tasks-accent-color-hover',
+    color: '--theme-color-tasks',
+    hoverColor: '--theme-color-tasks-hover',
     onClick: () => router.push({ name: 'tasks' }),
   },
   {
     title: 'Projects',
     tip: 'Create and categorize your tasks by projects',
-    color: '--projects-accent-color',
-    hoverColor: '--projects-accent-color-hover',
+    color: '--theme-color-projects',
+    hoverColor: '--theme-color-projects-hover',
     onClick: () => alert('Clicked2!'),
   },
 ]);
@@ -61,28 +61,27 @@ const buttons = ref([
 
 <style scoped>
 .menu-container {
-  min-height: 100%;
-  margin: 0 24px;
-
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  margin: 0 24px;
+  min-height: 100%;
 }
 
 .menu-wrapper {
+  column-gap: 150px;
   display: grid;
   grid-template-areas:
   'title              buttons-list'
   'small-buttons-list buttons-list';
-  column-gap: 150px;
 }
 
 .title {
-  grid-area: title;
   align-self: flex-end;
   font-size: 38px;
   font-weight: normal;
+  grid-area: title;
   margin-bottom: 20px;
 }
 
@@ -91,21 +90,21 @@ const buttons = ref([
 }
 
 .title-app-name {
-  position: relative;
   font-weight: 300;
+  position: relative;
 }
 
 .buttons-list {
-  grid-area: buttons-list;
   display: flex;
   flex-direction: column;
   gap: 18px;
+  grid-area: buttons-list;
 }
 
 .small-buttons-list {
-  grid-area: small-buttons-list;
   display: flex;
   gap: 12px;
+  grid-area: small-buttons-list;
 }
 
 @media (max-width: 768px) {
@@ -115,8 +114,8 @@ const buttons = ref([
 
   .title {
     font-size: 32px;
-    margin-right: 0;
     margin-bottom: 50px;
+    margin-right: 0;
   }
 
   .buttons-list {
@@ -125,13 +124,6 @@ const buttons = ref([
 
   .small-buttons-list {
     justify-content: flex-end;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .title-app-name::before,
-  .title-app-name::after {
-    background-color: var(--dark-theme-fg);
   }
 }
 </style>
