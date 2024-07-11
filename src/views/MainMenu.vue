@@ -13,15 +13,13 @@ const buttons = ref([
   {
     title: 'Tasks',
     tip: 'Write down your plans and assign them to a project later',
-    color: '--theme-color-tasks',
-    hoverColor: '--theme-color-tasks-hover',
+    color: 'tasks',
     onClick: () => router.push({ name: 'tasks' }),
   },
   {
     title: 'Projects',
     tip: 'Create and categorize your tasks by projects',
-    color: '--theme-color-projects',
-    hoverColor: '--theme-color-projects-hover',
+    color: 'projects',
     onClick: () => alert('Clicked2!'),
   },
 ]);

@@ -15,11 +15,8 @@ const props = defineProps({
 <template>
   <button
     class="button"
+    :class="settings.color"
     @click="settings.onClick"
-    :style="`
-        --accent-color: var(${settings.color});
-        --accent-color-hover: var(${settings.hoverColor});
-      `"
   >
     <div class="title">{{ settings.title }}</div>
     <div class="tip">{{ settings.tip }}</div>
@@ -28,12 +25,13 @@ const props = defineProps({
 
 <style scoped>
 .button {
-  --color: var(--accent-color);
+  --button-color-background: var(--theme-color-background-hover);
+  --button-color-background-hover: var(--theme-color-background-hover);
 
-  background-color: var(--color);
+  background-color: var(--button-color-background);
   border: none;
   border-radius: 16px;
-  box-shadow: 0 0 5px var(--color);
+  box-shadow: 0 0 5px var(--button-color-background);
   cursor: pointer;
   min-height: 115px;
   padding: 30px;
@@ -42,9 +40,17 @@ const props = defineProps({
 }
 
 .button:hover {
-  --color: var(--accent-color-hover);
+  box-shadow: 0 0 15px var(--button-color-background-hover);
+}
 
-  box-shadow: 0 0 15px var(--color);
+.button.tasks {
+  --button-color-background: var(--theme-color-tasks);
+  --button-color-background-hover: var(--theme-color-tasks-hover);
+}
+
+.button.projects {
+  --button-color-background: var(--theme-color-projects);
+  --button-color-background-hover: var(--theme-color-projects-hover);
 }
 
 .title {
@@ -75,14 +81,12 @@ const props = defineProps({
 @media (prefers-color-scheme: dark) {
   .button {
     background-color: transparent;
-    border: solid 3px var(--color);
-    color: var(--color);
+    border: solid 3px var(--button-color-background);
+    color: var(--button-color-background);
   }
 
   .button:hover {
-    --color: var(--accent-color);
-
-    background-color: var(--color);
+    background-color: var(--button-color-background);
     color: var(--theme-color-background);
   }
 }
