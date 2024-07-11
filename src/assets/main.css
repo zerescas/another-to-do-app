@@ -1,31 +1,29 @@
 @import url('./roboto.css');
-@import url(./custom-checkbox.css);
+@import url('./custom-checkbox.css');
 
 :root {
-  --light-theme-bg: #f3f3f3;
-  --light-theme-bg-hover: #c9c9c9;
-  --light-theme-fg: #1d1d1d;
-  --light-theme-fg-hover: #3b3b3b;
+  color-scheme: light;
 
-  --dark-theme-bg: var(--light-theme-fg);
-  --dark-theme-bg-hover: var(--light-theme-fg-hover);
-  --dark-theme-fg: var(--light-theme-bg);
-  --dark-theme-fg-hover: var(--light-theme-bg-hover);
+  /* Common */
+  --theme-color-background: #f3f3f3;
+  --theme-color-background-hover: #c9c9c9;
+  --theme-color-text-primary: #1d1d1d;
+  --theme-color-text-primary-hover: #3b3b3b;
 
-  --tasks-accent-color: #ffbf85;
-  --tasks-accent-color-hover: #edb27c;
+  /* Tasks */
+  --theme-color-tasks: #ffbf85;
+  --theme-color-tasks-hover: #edb27c;
 
-  --projects-accent-color: #90d7ff;
-  --projects-accent-color-hover: #7cb9db;
-
-  color-scheme: only light;
+  /* Projects */
+  --theme-color-projects: #90d7ff;
+  --theme-color-projects-hover: #7cb9db;
 }
 
 * {
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Roboto';
 }
 
 html,
@@ -36,13 +34,18 @@ body,
 }
 
 #app {
-  color: var(--light-theme-fg);
-  background-color: var(--light-theme-bg);
+  background-color: var(--theme-color-background);
+  color: var(--theme-color-text-primary);
 }
 
 @media (prefers-color-scheme: dark) {
-  #app {
-    color: var(--dark-theme-fg);
-    background-color: var(--dark-theme-bg);
+  :root {
+    color-scheme: dark;
+
+    /* Common */
+    --theme-color-background: #1d1d1d;
+    --theme-color-background-hover: #3b3b3b;
+    --theme-color-text-primary: #f3f3f3;
+    --theme-color-text-primary-hover: #c9c9c9;
   }
 }
