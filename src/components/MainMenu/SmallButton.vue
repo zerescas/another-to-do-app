@@ -21,10 +21,10 @@ const props = defineProps({
 <style scoped>
 .button {
   align-items: center;
-  background-color: var(--light-theme-fg);
+  background-color: var(--theme-color-button-negative);
   border: none;
   border-radius: 16px;
-  color: var(--light-theme-bg);
+  color: var(--theme-color-background);
   cursor: pointer;
   display: flex;
   height: 54px;
@@ -35,7 +35,7 @@ const props = defineProps({
 }
 
 .button:hover {
-  background-color: var(--light-theme-fg-hover);
+  background-color: var(--theme-color-button-negative-hover);
 }
 
 .button>* {
@@ -54,16 +54,5 @@ const props = defineProps({
 .tip {
   font-size: 14px;
   opacity: .6;
-}
-
-@media (prefers-color-scheme: dark) {
-  .button {
-    background-color: var(--dark-theme-fg);
-    color: var(--dark-theme-bg);
-  }
-
-  .button:hover {
-    background-color: var(--dark-theme-fg-hover);
-  }
 }
 </style>

@@ -9,6 +9,8 @@
   --theme-color-background-hover: #c9c9c9;
   --theme-color-text-primary: #1d1d1d;
   --theme-color-text-primary-hover: #3b3b3b;
+  --theme-color-button-negative: #1d1d1d;
+  --theme-color-button-negative-hover: #3b3b3b;
 
   /* Tasks */
   --theme-color-tasks: #ffbf85;
@@ -47,5 +49,7 @@ body,
     --theme-color-background-hover: #3b3b3b;
     --theme-color-text-primary: #f3f3f3;
     --theme-color-text-primary-hover: #c9c9c9;
+    --theme-color-button-negative: #f3f3f3;
+    --theme-color-button-negative-hover: #c9c9c9;
   }
 }
