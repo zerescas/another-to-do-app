@@ -30,20 +30,21 @@ const props = defineProps({
 .button {
   --color: var(--accent-color);
 
-  padding: 30px;
   background-color: var(--color);
-  box-shadow: 0px 0px 5px var(--color);
-  border-radius: 16px;
-  text-align: left;
   border: none;
-  min-height: 115px;
+  border-radius: 16px;
+  box-shadow: 0 0 5px var(--color);
   cursor: pointer;
+  min-height: 115px;
+  padding: 30px;
+  text-align: left;
   transition: .15s ease-in;
 }
 
 .button:hover {
   --color: var(--accent-color-hover);
-  box-shadow: 0px 0px 15px var(--color);
+
+  box-shadow: 0 0 15px var(--color);
 }
 
 .title {
@@ -80,8 +81,9 @@ const props = defineProps({
 
   .button:hover {
     --color: var(--accent-color);
+
     background-color: var(--color);
-    color: var(--dark-theme-bg);
+    color: var(--theme-color-background);
   }
 }
 </style>
