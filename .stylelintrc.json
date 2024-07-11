@@ -1,0 +1,9 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-standard-vue"],
+
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "media-feature-range-notation": "prefix",
+    "order/properties-alphabetical-order": true
+  }
+}
