@@ -12,7 +12,9 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "stylelint": "stylelint \"src/**/*.css\"",
+    "stylelint-fix": "stylelint \"src/**/*.css\" --fix"
   },
   "dependencies": {
     "pinia": "^2.1.7",
