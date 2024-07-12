@@ -5,6 +5,5 @@
   "singleQuote": true,
   "printWidth": 100,
   "trailingComma": "all",
-  "singleAttributePerLine": true,
-  "embeddedLanguageFormatting": "off"
+  "singleAttributePerLine": true
 }
