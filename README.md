@@ -64,3 +64,15 @@ npm run test:e2e -- --debug
 ```sh
 npm run lint
 ```
+
+### Lint with [Stylelint](https://stylelint.io/)
+
+To check and display issues:
+```sh
+npm run stylelint
+```
+
+To check and autofix:
+```sh
+npm run stylelint
+```
