@@ -2,6 +2,8 @@
 
 Hey, this is another to do app based on 'create-vue' template.
 
+![MainMenu](https://github.com/user-attachments/assets/9a258b1a-115e-4888-9246-03026e9fce2c)
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
