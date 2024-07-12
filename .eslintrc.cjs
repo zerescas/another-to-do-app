@@ -9,6 +9,14 @@ module.exports = {
     '@vue/eslint-config-typescript',
     '@vue/eslint-config-prettier'
   ],
+  rules: {
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto'
+      }
+    ]
+  },
   overrides: [
     {
       files: [
