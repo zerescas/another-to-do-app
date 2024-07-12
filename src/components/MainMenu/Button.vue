@@ -7,8 +7,8 @@ const props = defineProps({
     required: true,
     validator: (value: Object) => {
       return 'title' in value && 'tip' in value && 'onClick' in value;
-    }
-  }
+    },
+  },
 });
 </script>
 
@@ -36,7 +36,7 @@ const props = defineProps({
   min-height: 115px;
   padding: 30px;
   text-align: left;
-  transition: .15s ease-in;
+  transition: 0.15s ease-in;
 }
 
 .button:hover {
@@ -55,12 +55,12 @@ const props = defineProps({
 
 .title {
   font-size: 26px;
-  margin-bottom: 6px
+  margin-bottom: 6px;
 }
 
 .tip {
   font-size: 15px;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 @media (max-width: 768px) {
@@ -70,7 +70,7 @@ const props = defineProps({
 
   .title {
     font-size: 24px;
-    margin-bottom: 4px
+    margin-bottom: 4px;
   }
 
   .tip {

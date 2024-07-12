@@ -12,14 +12,14 @@ const emits = defineEmits(['update-task']);
 
 const taskDone = ref(props.task.done);
 
-watch(taskDone, newValue => {
+watch(taskDone, (newValue) => {
   emits('update-task', newValue);
-})
+});
 </script>
 
 <template>
   <div
-    :class="`task-item ${ task.done && 'done' }`"
+    :class="`task-item ${task.done && 'done'}`"
     :style="`--task-item-accent: ${task.color}`"
   >
     <label class="custom-checkbox">
@@ -62,7 +62,7 @@ watch(taskDone, newValue => {
 }
 
 .task-item.done {
-  filter: saturate(.5) opacity(.8);
+  filter: saturate(0.5) opacity(0.8);
 }
 
 .task-item.done .content {
@@ -90,7 +90,7 @@ watch(taskDone, newValue => {
   }
 
   .task-item.done .content {
-    filter: grayscale()
+    filter: grayscale();
   }
 
   .task-item.done .content {

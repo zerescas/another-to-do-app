@@ -5,8 +5,8 @@ const props = defineProps({
   settings: {
     type: Object,
     required: true,
-  }
-})
+  },
+});
 </script>
 
 <template>
@@ -30,7 +30,7 @@ const props = defineProps({
   height: 54px;
   justify-content: center;
   text-align: left;
-  transition: .15s ease-in;
+  transition: 0.15s ease-in;
   width: 54px;
 }
 
@@ -38,21 +38,21 @@ const props = defineProps({
   background-color: var(--theme-color-button-negative-hover);
 }
 
-.button>* {
-  transition: .35s ease-in;
+.button > * {
+  transition: 0.35s ease-in;
 }
 
-.button:hover>* {
+.button:hover > * {
   transform: rotate(180deg);
 }
 
 .header {
   font-size: 24px;
-  margin-bottom: 4px
+  margin-bottom: 4px;
 }
 
 .tip {
   font-size: 14px;
-  opacity: .6;
+  opacity: 0.6;
 }
 </style>

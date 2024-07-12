@@ -71,8 +71,8 @@ const buttons = ref([
   column-gap: 150px;
   display: grid;
   grid-template-areas:
-  'title              buttons-list'
-  'small-buttons-list buttons-list';
+    'title              buttons-list'
+    'small-buttons-list buttons-list';
 }
 
 .title {

@@ -5,8 +5,8 @@ const props = defineProps({
   settings: {
     type: Object,
     required: true,
-  }
-})
+  },
+});
 </script>
 
 <template>
