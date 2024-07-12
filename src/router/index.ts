@@ -9,6 +9,11 @@ const router = createRouter({
       name: 'home',
       component: MainMenu,
     },
+    {
+      path: '/tasks',
+      name: 'tasks',
+      component: () => import('../views/TasksView.vue'),
+    },
   ],
 });
 
