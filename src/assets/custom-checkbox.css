@@ -1,4 +1,6 @@
 .custom-checkbox {
+  --custom-checkbox-accent: var(--theme-color-text-primary-hover);
+
   margin-right: 24px;
 }
 
@@ -28,10 +30,10 @@
 }
 
 .custom-checkbox input[type='checkbox']:checked + .checkbox {
-  border-color: var(--item-accent);
+  border-color: var(--custom-checkbox-accent);
 }
 
 .custom-checkbox input[type='checkbox']:checked + .checkbox::after {
-  background-color: var(--item-accent);
+  background-color: var(--custom-checkbox-accent);
   transform: translate(50%, 50%) scale(1);
 }
