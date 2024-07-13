@@ -13,8 +13,8 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "stylelint": "stylelint \"src/**/*.css\"",
-    "stylelint-fix": "stylelint \"src/**/*.css\" --fix"
+    "stylelint": "stylelint \"./src/**/*.{css,scss,sass,vue}\"",
+    "stylelint-fix": "stylelint \"./src/**/*.{css,scss,sass,vue}\" --fix"
   },
   "dependencies": {
     "pinia": "^2.1.7",
