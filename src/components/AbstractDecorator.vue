@@ -22,7 +22,7 @@
   top: 50%;
   width: 18px;
   height: 2px;
-  background-color: var(--light-theme-fg);
+  background-color: var(--theme-color-text-primary);
   transform: translate(-50%, -50%) rotate(45deg);
   transform-origin: center;
 }
@@ -40,12 +40,6 @@
   }
   100% {
     transform: rotate(90deg);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .line {
-    background-color: var(--dark-theme-fg);
   }
 }
 </style>

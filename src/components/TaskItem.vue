@@ -41,7 +41,7 @@ watch(taskDone, (newValue) => {
   align-items: center;
   background: linear-gradient(90deg, var(--task-item-accent), var(--theme-color-background-hover));
   border-radius: 16px;
-  color: var(--dark-theme-fg);
+  color: var(--theme-color-text-primary);
   display: flex;
   font-size: 18px;
   overflow: hidden;
