@@ -58,22 +58,22 @@ const props = defineProps({
 .header {
   background-color: var(--theme-color-navbar-background);
   display: flex;
-  gap: 24px;
+  gap: 16px;
   padding: 12px;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 19px;
   font-weight: normal;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .header {
-    gap: 16px;
+    gap: 24px;
   }
 
   .title {
-    font-size: 19px;
+    font-size: 24px;
   }
 }
 

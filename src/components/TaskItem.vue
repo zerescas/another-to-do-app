@@ -43,9 +43,9 @@ watch(taskDone, (newValue) => {
   border-radius: 16px;
   color: var(--theme-color-text-primary);
   display: flex;
-  font-size: 18px;
+  font-size: 16px;
   overflow: hidden;
-  padding: 32px 24px;
+  padding: 24px;
   position: relative;
   transition: 0.15s ease-in;
 }
@@ -69,10 +69,10 @@ watch(taskDone, (newValue) => {
   text-decoration: line-through;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .task-item {
-    font-size: 16px;
-    padding: 24px;
+    font-size: 18px;
+    padding: 32px 24px;
   }
 }
 
@@ -90,11 +90,8 @@ watch(taskDone, (newValue) => {
   }
 
   .task-item.done .content {
-    filter: grayscale();
-  }
-
-  .task-item.done .content {
     color: var(--task-item-accent);
+    filter: grayscale();
   }
 }
 </style>

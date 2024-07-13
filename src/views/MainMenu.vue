@@ -68,19 +68,14 @@ const buttons = ref([
 }
 
 .menu-wrapper {
-  column-gap: 150px;
-  display: grid;
-  grid-template-areas:
-    'title              buttons-list'
-    'small-buttons-list buttons-list';
+  display: block;
 }
 
 .title {
-  align-self: flex-end;
-  font-size: 38px;
+  font-size: 32px;
   font-weight: normal;
-  grid-area: title;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  margin-right: 0;
 }
 
 .title-intro {
@@ -96,32 +91,39 @@ const buttons = ref([
   display: flex;
   flex-direction: column;
   gap: 18px;
-  grid-area: buttons-list;
+  margin-bottom: 50px;
 }
 
 .small-buttons-list {
   display: flex;
   gap: 12px;
-  grid-area: small-buttons-list;
+  justify-content: flex-end;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .menu-wrapper {
-    display: block;
+    column-gap: 150px;
+    display: grid;
+    grid-template-areas:
+      'title              buttons-list'
+      'small-buttons-list buttons-list';
   }
 
   .title {
-    font-size: 32px;
-    margin-bottom: 50px;
-    margin-right: 0;
+    align-self: flex-end;
+    font-size: 38px;
+    grid-area: title;
+    margin-bottom: 20px;
   }
 
   .buttons-list {
-    margin-bottom: 50px;
+    grid-area: buttons-list;
+    margin-bottom: 0;
   }
 
   .small-buttons-list {
-    justify-content: flex-end;
+    grid-area: small-buttons-list;
+    justify-content: flex-start;
   }
 }
 </style>
