@@ -9,22 +9,22 @@
 
 <style scoped>
 .abstract-decorator {
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translateX(100%);
   animation: rotate 1.5s normal infinite;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
 }
 
 .line {
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  width: 18px;
-  height: 2px;
   background-color: var(--theme-color-text-primary);
+  height: 2px;
+  left: 100%;
+  position: absolute;
+  top: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
   transform-origin: center;
+  width: 18px;
 }
 
 .abstract-decorator > .line:first-child {
@@ -35,9 +35,11 @@
   0% {
     transform: rotate(0deg);
   }
+
   50% {
     transform: rotate(90deg);
   }
+
   100% {
     transform: rotate(90deg);
   }
