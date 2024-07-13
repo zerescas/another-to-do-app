@@ -29,10 +29,10 @@ const navBarSettings = ref({
 .tasks-container {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  max-width: 1000px;
+  margin: 0;
+  max-width: none;
   min-height: 100%;
-  padding: 24px 0;
+  padding: 0;
 }
 
 .tasks-list {
@@ -43,11 +43,11 @@ const navBarSettings = ref({
   padding: 18px;
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 1024px) {
   .tasks-container {
-    margin: 0;
-    max-width: none;
-    padding: 0;
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 24px 0;
   }
 }
 </style>

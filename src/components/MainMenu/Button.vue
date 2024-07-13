@@ -34,7 +34,7 @@ const props = defineProps({
   box-shadow: 0 0 5px var(--button-color-background);
   cursor: pointer;
   min-height: 115px;
-  padding: 30px;
+  padding: 24px;
   text-align: left;
   transition: 0.15s ease-in;
 }
@@ -54,27 +54,27 @@ const props = defineProps({
 }
 
 .title {
-  font-size: 26px;
-  margin-bottom: 6px;
+  font-size: 24px;
+  margin-bottom: 4px;
 }
 
 .tip {
-  font-size: 15px;
+  font-size: 14px;
   opacity: 0.6;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .button {
-    padding: 24px;
+    padding: 30px;
   }
 
   .title {
-    font-size: 24px;
-    margin-bottom: 4px;
+    font-size: 26px;
+    margin-bottom: 6px;
   }
 
   .tip {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
