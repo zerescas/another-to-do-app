@@ -10,11 +10,9 @@ const props = defineProps({
 
 const emits = defineEmits(['update-task']);
 
-const taskDone = ref(props.task.done);
-
-watch(taskDone, (newValue) => {
-  emits('update-task', newValue);
-});
+function updateTaskDone(isDone) {
+  emits('update-task', isDone);
+}
 </script>
 
 <template>
@@ -25,7 +23,8 @@ watch(taskDone, (newValue) => {
     <label class="custom-checkbox">
       <input
         type="checkbox"
-        v-model="taskDone"
+        :checked="props.task.done"
+        @input="updateTaskDone($event.target.checked)"
       />
       <span class="checkbox"></span>
     </label>
