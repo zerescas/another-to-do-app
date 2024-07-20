@@ -10,7 +10,8 @@ const props = defineProps({
 
 const emits = defineEmits(['update-task']);
 
-function updateTaskDone(isDone) {
+function updateTaskDone(event: Event) {
+  const isDone = (event.target as HTMLInputElement).checked;
   emits('update-task', isDone);
 }
 </script>
@@ -24,7 +25,7 @@ function updateTaskDone(isDone) {
       <input
         type="checkbox"
         :checked="props.task.done"
-        @input="updateTaskDone($event.target.checked)"
+        @input="updateTaskDone"
       />
       <span class="checkbox"></span>
     </label>
