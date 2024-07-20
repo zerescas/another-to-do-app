@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import IconBack from '../components/icons/IconBack.vue';
 
 const props = defineProps({
