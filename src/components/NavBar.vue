@@ -22,7 +22,9 @@ const props = defineProps({
       >
         <IconBack />
       </button>
-      <h1 class="title">Tasks</h1>
+      <h1 class="title">
+        {{ $router.currentRoute.value.name }}
+      </h1>
     </header>
   </div>
 </template>
@@ -48,18 +50,20 @@ const props = defineProps({
 }
 
 .button-back {
+  align-items: center;
   background-color: transparent;
   border: none;
   color: inherit;
   cursor: pointer;
+  display: flex;
   outline: none;
 }
 
 .header {
   background-color: var(--theme-color-navbar-background);
   display: flex;
-  gap: 16px;
-  padding: 12px;
+  gap: 18px;
+  padding: 16px 20px;
 }
 
 .title {
@@ -70,10 +74,11 @@ const props = defineProps({
 @media (min-width: 768px) {
   .header {
     gap: 24px;
+    padding: 14px;
   }
 
   .title {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 
