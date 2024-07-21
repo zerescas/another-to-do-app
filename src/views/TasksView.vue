@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import NavBar from '../components/NavBar.vue';
 import { useTaskStore } from '@/stores/taskStore';
-import ItemToDo from '@/components/ItemToDo.vue';
+import ToDoItem from '@/components/ToDoItem.vue';
 
 const taskStore = useTaskStore();
 const navBarSettings = ref({
@@ -13,7 +13,7 @@ const navBarSettings = ref({
 <template>
   <div class="tasks-container">
     <div class="tasks-list">
-      <ItemToDo
+      <ToDoItem
         v-for="(task, index) in taskStore.tasks"
         :key="task.index"
         :toDo="task"
