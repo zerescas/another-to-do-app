@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CardItem from '@/components/ItemCard.vue';
+import CardItem from '@/components/item/ItemCard.vue';
 import CustomCheckbox from '@/components/CustomCheckbox.vue';
 
 const props = defineProps({

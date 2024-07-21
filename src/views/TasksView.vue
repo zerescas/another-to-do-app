@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import NavBar from '../components/NavBar.vue';
 import { useTaskStore } from '@/stores/taskStore';
-import ToDoItem from '@/components/ToDoItem.vue';
+import ToDoItem from '@/components/item/ToDoItem.vue';
 
 const taskStore = useTaskStore();
 const navBarSettings = ref({
