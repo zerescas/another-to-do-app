@@ -18,7 +18,7 @@ function updateTaskDone(isDone: boolean) {
 
 <template>
   <CardItem
-    :class="`item-todo ${toDo.done && 'done'}`"
+    :class="`todo-item ${toDo.done && 'done'}`"
     :style="`--item-card-accent: ${toDo.color}`"
   >
     <CustomCheckbox
@@ -31,11 +31,11 @@ function updateTaskDone(isDone: boolean) {
 </template>
 
 <style scoped>
-.item-todo.done {
+.todo-item.done {
   filter: saturate(0.8) opacity(0.5);
 }
 
-.item-todo.done .content {
+.todo-item.done .content {
   text-decoration: line-through;
 }
 
