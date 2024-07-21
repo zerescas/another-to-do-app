@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import NavBar from '../components/NavBar.vue';
-import TaskItem from '../components/TaskItem.vue';
 import { useTaskStore } from '@/stores/taskStore';
+import ItemToDo from '@/components/ItemToDo.vue';
 
 const taskStore = useTaskStore();
 const navBarSettings = ref({
@@ -13,11 +13,11 @@ const navBarSettings = ref({
 <template>
   <div class="tasks-container">
     <div class="tasks-list">
-      <TaskItem
+      <ItemToDo
         v-for="(task, index) in taskStore.tasks"
         :key="task.index"
-        :task
-        @update-task="taskStore.updateTaskStatus(index, $event)"
+        :toDo="task"
+        @update-todo="taskStore.updateTaskStatus(index, $event)"
       />
     </div>
 
