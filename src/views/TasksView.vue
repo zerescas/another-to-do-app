@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import ToDoList from '../components/ToDoList.vue';
 import NavBar from '../components/NavBar.vue';
 import { useTaskStore } from '@/stores/taskStore';
-import ToDoItem from '@/components/item/ToDoItem.vue';
 
 const taskStore = useTaskStore();
 const navBarSettings = ref({
@@ -11,22 +11,18 @@ const navBarSettings = ref({
 </script>
 
 <template>
-  <div class="tasks-container">
-    <div class="tasks-list">
-      <ToDoItem
-        v-for="(task, index) in taskStore.tasks"
-        :key="task.index"
-        :toDo="task"
-        @update-todo="taskStore.updateTaskStatus(index, $event)"
-      />
-    </div>
+  <div class="tasks-list-container">
+    <ToDoList
+      :items="taskStore.tasks"
+      @update-todo="(index, isDone) => taskStore.updateToDoDone(index, isDone)"
+    ></ToDoList>
 
     <NavBar :settings="navBarSettings" />
   </div>
 </template>
 
 <style scoped>
-.tasks-container {
+.tasks-list-container {
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -35,16 +31,8 @@ const navBarSettings = ref({
   padding: 0;
 }
 
-.tasks-list {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 16px;
-  padding: 18px;
-}
-
 @media (min-width: 1024px) {
-  .tasks-container {
+  .tasks-list-container {
     margin: 0 auto;
     max-width: 1000px;
     padding: 24px 0;
