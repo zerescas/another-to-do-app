@@ -92,8 +92,14 @@ const buttons = ref([
 }
 
 @media (min-width: 768px) {
+  .title {
+    font-size: 34px;
+  }
+}
+
+@media (min-width: 991px) {
   .menu-wrapper {
-    column-gap: 150px;
+    column-gap: 130px;
     display: grid;
     grid-template-areas:
       'title              buttons-list'
