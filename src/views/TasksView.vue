@@ -3,9 +3,10 @@ import { ref } from 'vue';
 import ToDoList from '../components/ToDoList.vue';
 import NavBar from '../components/NavBar.vue';
 import { useTaskStore } from '@/stores/taskStore';
+import type { NavBarSettings } from '@/types/navbar-settings';
 
 const taskStore = useTaskStore();
-const navBarSettings = ref({
+const navBarSettings = ref<NavBarSettings>({
   color: 'tasks',
 });
 </script>

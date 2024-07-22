@@ -1,10 +1,11 @@
 <script setup lang="ts">
+import type { PropType } from 'vue';
 import IconBack from '../components/icons/IconBack.vue';
+import type { NavBarSettings } from '@/types/navbar-settings';
 
 const props = defineProps({
   settings: {
-    type: Object,
-    required: true,
+    type: Object as PropType<NavBarSettings>,
   },
 });
 </script>
@@ -12,7 +13,7 @@ const props = defineProps({
 <template>
   <div
     class="header-container"
-    :class="settings.color"
+    :class="settings?.color"
   >
     <div class="header-line"></div>
     <header class="header">
