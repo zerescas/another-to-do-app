@@ -13,7 +13,7 @@ const navBarSettings = ref<NavBarSettings>({
 </script>
 
 <template>
-  <div class="list-projects-container">
+  <div class="app-layout app-layout--desktop-float">
     <ToDoList
       :items="projectStore.projects"
       @update-todo="projectStore.updateProject"
@@ -22,22 +22,3 @@ const navBarSettings = ref<NavBarSettings>({
     <NavBar :settings="navBarSettings" />
   </div>
 </template>
-
-<style scoped>
-.list-projects-container {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  max-width: none;
-  min-height: 100%;
-  padding: 0;
-}
-
-@media (min-width: 1024px) {
-  .list-projects-container {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 24px 0;
-  }
-}
-</style>

@@ -1,6 +1,9 @@
 @import url('./roboto.css');
 @import url('./custom-checkbox.css');
 
+/* App Layouts */
+@import url('./layout.css');
+
 :root {
   color-scheme: light;
 
@@ -42,6 +45,7 @@ body,
 #app {
   background-color: var(--theme-color-background);
   color: var(--theme-color-text-primary);
+  display: flex;
 }
 
 @media (prefers-color-scheme: dark) {

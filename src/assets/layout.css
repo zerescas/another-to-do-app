@@ -1,0 +1,34 @@
+/* Common layout for app's screen */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+}
+
+/* Modifier that keeps content in center of the screen */
+.app-layout--centered {
+  margin: auto;
+  width: unset;
+}
+
+/* Modifier that adds padding around the layout */
+.app-layout--padding {
+  padding: 24px;
+}
+
+@media (min-width: 768px) {
+  .app-layout {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  .app-layout--centered {
+    margin: auto;
+  }
+
+  /* Modifier that makes the layout floating (adds padding), but only for desktop version */
+  .app-layout--desktop-float {
+    padding: 24px;
+  }
+}

@@ -12,7 +12,7 @@ const navBarSettings = ref<NavBarSettings>({
 </script>
 
 <template>
-  <div class="tasks-list-container">
+  <div class="app-layout app-layout--desktop-float">
     <ToDoList
       :items="taskStore.tasks"
       @update-todo="taskStore.updateTask"
@@ -21,22 +21,3 @@ const navBarSettings = ref<NavBarSettings>({
     <NavBar :settings="navBarSettings" />
   </div>
 </template>
-
-<style scoped>
-.tasks-list-container {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  max-width: none;
-  min-height: 100%;
-  padding: 0;
-}
-
-@media (min-width: 1024px) {
-  .tasks-list-container {
-    margin: 0 auto;
-    max-width: 1000px;
-    padding: 24px 0;
-  }
-}
-</style>
