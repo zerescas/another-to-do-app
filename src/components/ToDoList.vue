@@ -33,6 +33,7 @@ function updateToDo(index: number, updates: ToDo) {
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
+  overflow: auto;
   padding: 18px;
 }
 </style>
