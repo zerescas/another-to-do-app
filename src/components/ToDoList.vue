@@ -4,7 +4,7 @@ import type { ToDo } from '@/types/todo';
 
 const props = defineProps({
   items: {
-    type: Array<Object>,
+    type: Array<ToDo>,
     required: true,
   },
 });
@@ -19,11 +19,11 @@ function updateToDo(index: number, updates: ToDo) {
 <template>
   <div class="todo-list">
     <ItemToDo
-      v-for="(item, index) in items as Array<ToDo>"
+      v-for="(item, index) in items"
       :key="index"
       :toDo="item"
       @update-todo="(updates: ToDo) => updateToDo(index, updates)"
-    />
+    ></ItemToDo>
   </div>
 </template>
 
