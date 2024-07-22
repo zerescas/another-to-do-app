@@ -50,7 +50,7 @@ body,
 }
 
 /* 
-A hack to keep children in place during a transition animations. 
+A hack to keep children in place during transition animations. 
 Most of the time, "#app" will have only one child, such as: 
   <div class="app-layout">
   ...
