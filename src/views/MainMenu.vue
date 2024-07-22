@@ -14,13 +14,13 @@ const buttons = ref([
     title: 'Tasks',
     tip: 'Write down your plans and assign them to a project later',
     color: 'tasks',
-    onClick: () => router.push({ name: 'tasks' }),
+    onClick: () => router.push({ name: 'Tasks' }),
   },
   {
     title: 'Projects',
     tip: 'Create and categorize your tasks by projects',
     color: 'projects',
-    onClick: () => alert('Clicked2!'),
+    onClick: () => router.push({ name: 'Projects' }),
   },
 ]);
 </script>
