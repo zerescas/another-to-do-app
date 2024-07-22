@@ -14,7 +14,7 @@ const navBarSettings = ref({
   <div class="tasks-list-container">
     <ToDoList
       :items="taskStore.tasks"
-      @update-todo="(index, isDone) => taskStore.updateToDoDone(index, isDone)"
+      @update-todo="taskStore.updateTask"
     ></ToDoList>
 
     <NavBar :settings="navBarSettings" />

@@ -22,8 +22,8 @@ export const useTaskStore = defineStore('tasks', {
     ],
   }),
   actions: {
-    updateToDoDone(index: number, done: boolean) {
-      this.tasks[index].done = done;
+    updateTask(index: number, updates: Task) {
+      this.tasks[index] = { ...this.tasks[index], ...updates };
     },
   },
 });

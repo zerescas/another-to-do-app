@@ -11,7 +11,7 @@ const props = defineProps({
 
 const emits = defineEmits(['update-todo']);
 
-function updateToDoDone(index: number, updates: ToDo) {
+function updateToDo(index: number, updates: ToDo) {
   emits('update-todo', index, updates);
 }
 </script>
@@ -22,7 +22,7 @@ function updateToDoDone(index: number, updates: ToDo) {
       v-for="(item, index) in items as Array<ToDo>"
       :key="index"
       :toDo="item"
-      @update-todo="updateToDoDone(index, $event)"
+      @update-todo="(updates: ToDo) => updateToDo(index, updates)"
     />
   </div>
 </template>

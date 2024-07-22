@@ -1,18 +1,20 @@
 <script setup lang="ts">
 import CardItem from '@/components/item/ItemCard.vue';
 import CustomCheckbox from '@/components/CustomCheckbox.vue';
+import type { ToDo } from '@/types/todo';
+import type { PropType } from 'vue';
 
 const props = defineProps({
   toDo: {
-    type: Object,
+    type: Object as PropType<ToDo>,
     required: true,
   },
 });
 
 const emits = defineEmits(['update-todo']);
 
-function updateToDoDone(isDone: boolean) {
-  emits('update-todo', isDone);
+function updateToDo(updates: ToDo) {
+  emits('update-todo', updates);
 }
 </script>
 
@@ -23,7 +25,7 @@ function updateToDoDone(isDone: boolean) {
   >
     <CustomCheckbox
       :checked="props.toDo.done"
-      @input="updateToDoDone"
+      @input="updateToDo({ done: $event } as ToDo)"
     />
 
     <p class="content">{{ toDo.content }}</p>
