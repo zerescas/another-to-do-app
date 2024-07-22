@@ -45,7 +45,20 @@ body,
 #app {
   background-color: var(--theme-color-background);
   color: var(--theme-color-text-primary);
-  display: flex;
+  /* Needed for vertical centering with "margin: auto 0" in children */
+  display: grid;
+}
+
+/* 
+A hack to keep children in place during a transition animations. 
+Most of the time, "#app" will have only one child, such as: 
+  <div class="app-layout">
+  ...
+  </div>
+*/
+#app > * {
+  grid-row: 1;
+  grid-column: 1;
 }
 
 @media (prefers-color-scheme: dark) {
