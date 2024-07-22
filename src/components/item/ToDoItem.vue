@@ -11,7 +11,7 @@ const props = defineProps({
 
 const emits = defineEmits(['update-todo']);
 
-function updateTaskDone(isDone: boolean) {
+function updateToDoDone(isDone: boolean) {
   emits('update-todo', isDone);
 }
 </script>
@@ -23,7 +23,7 @@ function updateTaskDone(isDone: boolean) {
   >
     <CustomCheckbox
       :checked="props.toDo.done"
-      @input="updateTaskDone"
+      @input="updateToDoDone"
     />
 
     <p class="content">{{ toDo.content }}</p>
