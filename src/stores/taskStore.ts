@@ -1,8 +1,13 @@
 import { ref, computed } from 'vue';
 import { defineStore } from 'pinia';
+import type { Task } from '@/types/task';
+
+interface State {
+  tasks: Array<Task>;
+}
 
 export const useTaskStore = defineStore('tasks', {
-  state: () => ({
+  state: (): State => ({
     tasks: [
       {
         content: 'Learn JavaScript',
