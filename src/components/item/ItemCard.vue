@@ -24,6 +24,7 @@ const props = defineProps({
   border-radius: 16px;
   color: var(--theme-color-text-primary);
   display: flex;
+  flex-shrink: 0;
   font-size: 16px;
   overflow: hidden;
   padding: 24px;
