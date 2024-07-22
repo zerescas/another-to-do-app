@@ -26,7 +26,7 @@ const buttons = ref([
 </script>
 
 <template>
-  <div class="menu-container">
+  <div class="app-layout app-layout--centered app-layout--padding">
     <div class="menu-wrapper">
       <h1 class="title">
         <span class="title-intro">Look, this is</span><br />
@@ -58,15 +58,6 @@ const buttons = ref([
 </template>
 
 <style scoped>
-.menu-container {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0 24px;
-  min-height: 100%;
-}
-
 .menu-wrapper {
   display: block;
 }
