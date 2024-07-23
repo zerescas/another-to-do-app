@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
+import ViewWrapper from './components/ViewWrapper.vue';
 </script>
 
 <template>
   <RouterView v-slot="{ Component }">
     <Transition name="scale-fade">
-      <component :is="Component"></component>
+      <ViewWrapper :key="$route.fullPath">
+        <component :is="Component"></component>
+      </ViewWrapper>
     </Transition>
   </RouterView>
 </template>
