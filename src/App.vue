@@ -20,7 +20,7 @@ import { RouterLink, RouterView } from 'vue-router';
 
 .scale-fade-enter-from,
 .scale-fade-leave-to {
-  transform: scale(0.9);
   opacity: 0;
+  transform: scale(0.9);
 }
 </style>

@@ -45,6 +45,7 @@ body,
 #app {
   background-color: var(--theme-color-background);
   color: var(--theme-color-text-primary);
+
   /* Needed for vertical centering with "margin: auto 0" in children */
   display: grid;
 }
@@ -57,8 +58,8 @@ Most of the time, "#app" will have only one child, such as:
   </div>
 */
 #app > * {
-  grid-row: 1;
   grid-column: 1;
+  grid-row: 1;
 }
 
 @media (prefers-color-scheme: dark) {
