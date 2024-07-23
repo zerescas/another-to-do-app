@@ -20,7 +20,8 @@ function updateToDo(updates: ToDo) {
 
 <template>
   <CardItem
-    :class="`todo-item ${toDo.done && 'done'}`"
+    class="todo-item"
+    :class="{ done: toDo.done }"
     :style="`--item-card-accent: ${toDo.color}`"
   >
     <CustomCheckbox
