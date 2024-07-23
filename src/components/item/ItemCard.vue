@@ -1,16 +1,7 @@
-<script setup lang="ts">
-const props = defineProps({
-  class: {
-    type: String,
-  },
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div
-    class="item-card"
-    :class="props.class"
-  >
+  <div class="item-card">
     <slot></slot>
   </div>
 </template>
