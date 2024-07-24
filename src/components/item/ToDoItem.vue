@@ -34,12 +34,22 @@ function updateToDo(updates: ToDo) {
 </template>
 
 <style scoped>
+.todo-item {
+  gap: 12px;
+}
+
 .todo-item.done {
   filter: saturate(0.8) opacity(0.5);
 }
 
 .todo-item.done .content {
   text-decoration: line-through;
+}
+
+@media (min-width: 768px) {
+  .todo-item {
+    gap: 18px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
