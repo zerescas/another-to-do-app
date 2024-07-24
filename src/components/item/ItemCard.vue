@@ -11,7 +11,8 @@
   --item-card-accent: var(--theme-color-text-primary);
 
   align-items: center;
-  background: linear-gradient(90deg, var(--item-card-accent), var(--theme-color-background-hover));
+  background: var(--theme-color-item-card-background);
+  box-shadow: 0 0 8px var(--theme-color-item-card-box-shadow);
   border-radius: 16px;
   color: var(--theme-color-text-primary);
   display: flex;
@@ -25,13 +26,13 @@
 
 .item-card::before {
   background: var(--item-card-accent);
+  box-shadow: 0 2px 4px var(--theme-color-item-card-box-shadow);
   content: '';
-  display: none;
-  height: 4px;
+  height: 100%;
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 12px;
 }
 
 @media (min-width: 768px) {
@@ -43,11 +44,13 @@
 
 @media (prefers-color-scheme: dark) {
   .item-card {
-    background: var(--theme-color-background-hover);
+    background: var(--theme-color-item-card-background);
   }
 
   .item-card::before {
-    display: block;
+    box-shadow: none;
+    height: 4px;
+    width: 100%;
   }
 }
 </style>
