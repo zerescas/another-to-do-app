@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ItemToDo from '@/components/item/ToDoItem.vue';
+import ToDoItem from '@/components/item/ToDoItem.vue';
 import type { ToDo } from '@/types/todo';
 
 const props = defineProps({
@@ -18,12 +18,12 @@ function updateToDo(index: number, updates: ToDo) {
 
 <template>
   <div class="todo-list">
-    <ItemToDo
+    <ToDoItem
       v-for="(item, index) in items"
       :key="index"
       :toDo="item"
       @update-todo="(updates: ToDo) => updateToDo(index, updates)"
-    ></ItemToDo>
+    ></ToDoItem>
   </div>
 </template>
 
