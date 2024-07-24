@@ -1,7 +1,5 @@
 .custom-checkbox {
   --custom-checkbox-accent: var(--theme-color-text-primary-hover);
-
-  margin-right: 24px;
 }
 
 .custom-checkbox input[type='checkbox'] {
