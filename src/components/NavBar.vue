@@ -35,6 +35,7 @@ const props = defineProps({
   --header-accent: var(--theme-color-text-primary);
 
   color: var(--theme-color-text-primary);
+  position: relative;
 }
 
 .header-container.tasks {
