@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ToDoItem from '@/components/item/ToDoItem.vue';
+import NewToDoItem from './item/NewToDoItem.vue';
 import type { ToDo } from '@/types/todo';
 
 const props = defineProps({
@@ -9,7 +10,11 @@ const props = defineProps({
   },
 });
 
-const emits = defineEmits(['update-todo']);
+const emits = defineEmits(['create-todo', 'update-todo']);
+
+function createToDo(toDo: ToDo) {
+  emits('create-todo', toDo);
+}
 
 function updateToDo(index: number, updates: ToDo) {
   emits('update-todo', index, updates);
@@ -24,6 +29,8 @@ function updateToDo(index: number, updates: ToDo) {
       :toDo="item"
       @update-todo="(updates: ToDo) => updateToDo(index, updates)"
     ></ToDoItem>
+
+    <NewToDoItem @create-todo="createToDo"></NewToDoItem>
   </div>
 </template>
 
