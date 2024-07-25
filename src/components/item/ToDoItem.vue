@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Textarea from 'primevue/textarea';
 import CustomCheckbox from '@/components/CustomCheckbox.vue';
 import type { ToDo } from '@/types/todo';
 import type { PropType } from 'vue';
@@ -30,6 +31,13 @@ function updateToDo(updates: ToDo) {
       @input="updateToDo({ done: $event } as ToDo)"
     />
 
-    <p class="content">{{ toDo.content }}</p>
+    <Textarea
+      class="todo-content"
+      :value="toDo.content"
+      @input="updateToDo({ content: ($event.target as HTMLInputElement).value } as ToDo)"
+      maxlength="200"
+      autoResize
+      rows="1"
+    ></Textarea>
   </div>
 </template>
