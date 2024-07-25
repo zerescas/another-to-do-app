@@ -15,6 +15,10 @@
   --theme-color-button-negative: #1d1d1d;
   --theme-color-button-negative-hover: #3b3b3b;
 
+  /* ItemCard */
+  --theme-color-item-card-background: #fafafa;
+  --theme-color-item-card-box-shadow: #00000015;
+
   /* Navbar */
   --theme-color-navbar-background: #fff;
   --theme-color-navbar-text: #020202;
@@ -59,6 +63,10 @@ body,
     --theme-color-text-primary-hover: #c9c9c9;
     --theme-color-button-negative: #f3f3f3;
     --theme-color-button-negative-hover: #c9c9c9;
+
+    /* ItemCard */
+    --theme-color-item-card-background: #3b3b3b;
+    --theme-color-item-card-box-shadow: #ffffff15;
 
     /* Navbar */
     --theme-color-navbar-background: transparent;
