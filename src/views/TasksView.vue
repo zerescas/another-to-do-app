@@ -15,6 +15,7 @@ const navBarSettings = ref<NavBarSettings>({
   <div class="app-layout app-layout--desktop-float">
     <ToDoList
       :items="taskStore.tasks"
+      @create-todo="taskStore.createTask"
       @update-todo="taskStore.updateTask"
     ></ToDoList>
 
