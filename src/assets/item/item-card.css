@@ -1,12 +1,3 @@
-<script setup lang="ts"></script>
-
-<template>
-  <div class="item-card">
-    <slot></slot>
-  </div>
-</template>
-
-<style scoped>
 .item-card {
   --item-card-accent: var(--theme-color-text-primary);
 
@@ -24,7 +15,7 @@
   transition: 0.15s ease-in;
 }
 
-.item-card::before {
+.item-card--decorated::before {
   background: var(--item-card-accent);
   box-shadow: 0 2px 4px var(--theme-color-item-card-box-shadow);
   content: '';
@@ -47,10 +38,9 @@
     background: var(--theme-color-item-card-background);
   }
 
-  .item-card::before {
+  .item-card--decorated::before {
     box-shadow: none;
     height: 4px;
     width: 100%;
   }
 }
-</style>

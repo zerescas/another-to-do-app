@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import CardItem from '@/components/item/ItemCard.vue';
 import CustomCheckbox from '@/components/CustomCheckbox.vue';
 import type { ToDo } from '@/types/todo';
 import type { PropType } from 'vue';
+import '@/assets/item/item-card.css';
+import '@/assets/item/todo/todo-item.css';
 
 const props = defineProps({
   toDo: {
@@ -19,42 +20,16 @@ function updateToDo(updates: ToDo) {
 </script>
 
 <template>
-  <CardItem
-    class="todo-item"
+  <div
+    class="item-card item-card--decorated todo-item"
     :class="{ done: toDo.done }"
     :style="`--item-card-accent: ${toDo.color}`"
   >
     <CustomCheckbox
-      :checked="props.toDo.done"
+      :checked="toDo.done"
       @input="updateToDo({ done: $event } as ToDo)"
     />
 
     <p class="content">{{ toDo.content }}</p>
-  </CardItem>
+  </div>
 </template>
-
-<style scoped>
-.todo-item {
-  gap: 12px;
-}
-
-.todo-item.done {
-  filter: saturate(0.8) opacity(0.5);
-}
-
-.todo-item.done .content {
-  text-decoration: line-through;
-}
-
-@media (min-width: 768px) {
-  .todo-item {
-    gap: 18px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .item-card.done .content {
-    color: var(--item-card-accent);
-  }
-}
-</style>
