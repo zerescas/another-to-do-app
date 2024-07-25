@@ -31,6 +31,9 @@ export const useProjectStore = defineStore('projects', {
     ],
   }),
   actions: {
+    createProject(newProject: Project) {
+      this.projects.push(newProject);
+    },
     updateProject(index: number, updates: Project) {
       this.projects[index] = { ...this.projects[index], ...updates };
     },

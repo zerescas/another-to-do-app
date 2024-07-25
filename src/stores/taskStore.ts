@@ -22,6 +22,9 @@ export const useTaskStore = defineStore('tasks', {
     ],
   }),
   actions: {
+    createTask(newTask: Task) {
+      this.tasks.push(newTask);
+    },
     updateTask(index: number, updates: Task) {
       this.tasks[index] = { ...this.tasks[index], ...updates };
     },
