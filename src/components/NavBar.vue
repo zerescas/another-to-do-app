@@ -1,12 +1,23 @@
 <script setup lang="ts">
-import type { PropType } from 'vue';
+import { computed, type PropType } from 'vue';
+import { useRouter } from 'vue-router';
 import IconBack from '../components/icons/IconBack.vue';
 import type { NavBarSettings } from '@/types/navbar-settings';
+
+const router = useRouter();
 
 const props = defineProps({
   settings: {
     type: Object as PropType<NavBarSettings>,
   },
+});
+
+const title = computed(() => {
+  if (props.settings?.customTitleMode === 'html' || props.settings?.customTitleMode === 'text') {
+    return props.settings.customTitle;
+  } else {
+    return router.currentRoute.value.name;
+  }
 });
 </script>
 
@@ -23,8 +34,17 @@ const props = defineProps({
       >
         <IconBack />
       </button>
-      <h1 class="title">
-        {{ $router.currentRoute.value.name }}
+
+      <h1
+        class="title"
+        v-if="settings?.customTitleMode === 'html'"
+        v-html="title"
+      ></h1>
+      <h1
+        class="title"
+        v-else
+      >
+        {{ title }}
       </h1>
     </header>
   </div>
@@ -71,6 +91,10 @@ const props = defineProps({
 .title {
   font-size: 19px;
   font-weight: normal;
+}
+
+.title :deep(.title-superscript) {
+  font-weight: 500;
 }
 
 @media (min-width: 768px) {
