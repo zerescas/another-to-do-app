@@ -37,5 +37,8 @@ export const useProjectStore = defineStore('projects', {
     updateProject(index: number, updates: Project) {
       this.projects[index] = { ...this.projects[index], ...updates };
     },
+    deleteProject(index: number) {
+      this.projects.splice(index, 1);
+    },
   },
 });
