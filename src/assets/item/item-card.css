@@ -3,8 +3,8 @@
 
   align-items: center;
   background: var(--theme-color-item-card-background);
-  box-shadow: 0 0 8px var(--theme-color-item-card-box-shadow);
   border-radius: 16px;
+  box-shadow: 0 0 8px var(--theme-color-item-card-box-shadow);
   color: var(--theme-color-text-primary);
   display: flex;
   flex-shrink: 0;

@@ -16,8 +16,8 @@
 }
 
 .todo-item.done .todo-content {
-  text-decoration: line-through;
   pointer-events: none;
+  text-decoration: line-through;
 }
 
 @media (min-width: 768px) {
