@@ -10,20 +10,7 @@ interface State {
 export const useTaskStore = defineStore('tasks', {
   state: (): State => ({
     _id: 0,
-    tasks: [
-      {
-        id: 0,
-        content: 'Learn JavaScript',
-        color: '#C1FEBC',
-        done: true,
-      },
-      {
-        id: 1,
-        content: 'Finish the walkthrough of Elden Ring',
-        color: '#F3BFFB',
-        done: false,
-      },
-    ],
+    tasks: [],
   }),
   actions: {
     createTask(newTask: Task & { id: number }) {
