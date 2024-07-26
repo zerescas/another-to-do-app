@@ -2,15 +2,32 @@
 import ToDoItem from '@/components/item/ToDoItem.vue';
 import NewToDoItem from './item/NewToDoItem.vue';
 import type { ToDo } from '@/types/todo';
-import { ref } from 'vue';
+import { ref, type PropType } from 'vue';
 import SmallButton from './MainMenu/SmallButton.vue';
+
+type ToDoTypes = 'task' | 'project';
 
 const props = defineProps({
   items: {
     type: Array<ToDo & MenuItemState>,
     required: true,
   },
+  toDoType: {
+    type: Object as PropType<ToDoTypes>,
+    required: true,
+  },
 });
+
+let settingsRouteName = '';
+switch (props.toDoType) {
+  case 'task':
+    settingsRouteName = 'TaskSettings';
+    break;
+
+  case 'project':
+    settingsRouteName = 'ProjectSettings';
+    break;
+}
 
 const emits = defineEmits(['create-todo', 'update-todo', 'delete-todo']);
 
@@ -59,7 +76,19 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
         :class="{ opened: item[isMenuOpened] }"
       >
         <div class="menu-buttons">
-          <button class="menu-button">Settings</button>
+          <button
+            class="menu-button"
+            @click="
+              $router.push({
+                name: settingsRouteName,
+                params: {
+                  id: item.id,
+                },
+              })
+            "
+          >
+            Settings
+          </button>
           <button
             class="menu-button"
             @click="deleteToDo(item.id)"

@@ -19,6 +19,16 @@ const router = createRouter({
       name: 'Projects',
       component: () => import('@/views/ProjectsView.vue'),
     },
+    {
+      path: '/tasks/edit/:id',
+      name: 'TaskSettings',
+      component: () => import('@/views/ToDoSettings/TaskSettingsView.vue'),
+    },
+    {
+      path: '/projects/edit/:id',
+      name: 'ProjectSettings',
+      component: () => import('@/views/ToDoSettings/ProjectSettingsView.vue'),
+    },
   ],
 });
 

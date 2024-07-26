@@ -32,6 +32,7 @@ watch(
   <div class="app-layout app-layout--desktop-float">
     <ToDoList
       :items="taskStore.tasks"
+      :toDoType="'task'"
       @create-todo="taskStore.createTask"
       @update-todo="taskStore.updateTask"
       @delete-todo="taskStore.deleteTask"
