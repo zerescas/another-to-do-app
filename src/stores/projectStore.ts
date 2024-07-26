@@ -15,6 +15,7 @@ export const useProjectStore = defineStore('projects', {
   actions: {
     createProject(newProject: Project) {
       newProject.id = this._id++;
+      newProject.pinnedTasks = [];
       this.projects.push(newProject);
 
       return newProject;
