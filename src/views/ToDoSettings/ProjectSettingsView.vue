@@ -38,6 +38,9 @@ function createPinnedTask(task: Task) {
 
   newTask.pinnedToProject = projectItem?.value.id as number;
   projectItem?.value.pinnedTasks.push(newTask.id);
+
+  taskStore.saveStateToLocalStorage();
+  projectStore.saveStateToLocalStorage();
 }
 
 function deletePinnedTask(id: number) {

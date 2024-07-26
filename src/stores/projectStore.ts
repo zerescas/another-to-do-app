@@ -1,6 +1,7 @@
 import type { Project } from '@/types/project';
 import { defineStore } from 'pinia';
 import { toRef } from 'vue';
+import { loadStateToLocalStorage } from './common/load-state-from-local-storage';
 
 interface State {
   _id: number;
@@ -16,7 +17,9 @@ export const useProjectStore = defineStore('projects', {
     createProject(newProject: Project) {
       newProject.id = this._id++;
       newProject.pinnedTasks = [];
+
       this.projects.push(newProject);
+      this.saveStateToLocalStorage();
 
       return newProject;
     },
@@ -26,10 +29,12 @@ export const useProjectStore = defineStore('projects', {
       if (index === -1) return;
 
       this.projects[index] = { ...this.projects[index], ...updates };
+      this.saveStateToLocalStorage();
     },
 
     deleteProject(id: number) {
       this.projects = this.projects.filter((p) => p.id !== id);
+      this.saveStateToLocalStorage();
     },
 
     getProject(id: number | string) {
@@ -37,6 +42,21 @@ export const useProjectStore = defineStore('projects', {
       if (index === -1) return;
 
       return toRef(this.projects, index);
+    },
+
+    loadStateFromLocalStorage(): boolean {
+      const propertiesToLoad = ['_id', 'projects'];
+
+      return loadStateToLocalStorage(this, propertiesToLoad, 'projectStore');
+    },
+
+    saveStateToLocalStorage() {
+      const currentState = {
+        _id: this._id,
+        projects: this.projects,
+      } as State;
+
+      localStorage.setItem('projectStore', JSON.stringify(currentState));
     },
   },
 });
