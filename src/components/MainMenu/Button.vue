@@ -1,13 +1,18 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, type PropType } from 'vue';
+
+export interface MainMenuButtonProps {
+  title: string;
+  titleSuperscript?: string;
+  tip: string;
+  color?: string;
+  onClick: Function;
+}
 
 const props = defineProps({
   settings: {
-    type: Object,
+    type: Object as PropType<MainMenuButtonProps>,
     required: true,
-    validator: (value: Object) => {
-      return 'title' in value && 'tip' in value && 'onClick' in value;
-    },
   },
 });
 </script>
@@ -16,9 +21,12 @@ const props = defineProps({
   <button
     class="button"
     :class="settings.color"
-    @click="settings.onClick"
+    @click="settings.onClick()"
   >
-    <div class="title">{{ settings.title }}</div>
+    <div class="title">
+      {{ settings.title }}
+      <sup class="title-superscript">{{ settings.titleSuperscript }}</sup>
+    </div>
     <div class="tip">{{ settings.tip }}</div>
   </button>
 </template>
@@ -56,6 +64,11 @@ const props = defineProps({
 .title {
   font-size: 24px;
   margin-bottom: 4px;
+}
+
+.title-superscript {
+  font-size: 70%;
+  font-weight: 500;
 }
 
 .tip {

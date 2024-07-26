@@ -1,15 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
+import { useTaskStore } from '@/stores/taskStore';
+import { useProjectStore } from '@/stores/projectStore';
 import AbstractDecorator from '../components/AbstractDecorator.vue';
-import Button from '../components/MainMenu/Button.vue';
+import Button, { type MainMenuButtonProps } from '../components/MainMenu/Button.vue';
 import SmallButton from '../components/MainMenu/SmallButton.vue';
 import IconSettings from '../components/icons/IconSettings.vue';
 import IconAbout from '../components/icons/IconAbout.vue';
 
 const router = useRouter();
 
-const buttons = ref([
+const taskStore = useTaskStore();
+const projectStore = useProjectStore();
+
+const buttons = ref<Array<MainMenuButtonProps>>([
   {
     title: 'Tasks',
     tip: 'Write down your plans and assign them to a project later',
@@ -23,6 +28,22 @@ const buttons = ref([
     onClick: () => router.push({ name: 'Projects' }),
   },
 ]);
+
+watch(
+  () => taskStore.tasks,
+  (newTasks) => {
+    buttons.value[0].titleSuperscript = `${newTasks.length}`;
+  },
+  { immediate: true },
+);
+
+watch(
+  () => projectStore.projects,
+  (newProjects) => {
+    buttons.value[1].titleSuperscript = `${newProjects.length}`;
+  },
+  { immediate: true },
+);
 </script>
 
 <template>
