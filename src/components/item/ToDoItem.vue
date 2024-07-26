@@ -5,11 +5,15 @@ import type { ToDo } from '@/types/todo';
 import type { PropType } from 'vue';
 import '@/assets/item/item-card.css';
 import '@/assets/item/todo/todo-item.css';
+import type { ToDoItemSettings } from '@/types/todo-item-settings';
 
 const props = defineProps({
   toDo: {
     type: Object as PropType<ToDo>,
     required: true,
+  },
+  settings: {
+    type: Object as PropType<ToDoItemSettings>,
   },
 });
 
@@ -31,6 +35,21 @@ function updateToDo(updates: ToDo) {
       @input="updateToDo({ done: $event } as ToDo)"
     />
 
-    <p class="todo-content">{{ toDo.content }}</p>
+    <Textarea
+      v-if="settings?.editableContent"
+      ref="toDoContentRef"
+      class="todo-content"
+      :value="toDo.content"
+      @input="updateToDo({ content: ($event.target as HTMLInputElement).value } as ToDo)"
+      maxlength="200"
+      autoResize
+      rows="1"
+    ></Textarea>
+    <p
+      v-else
+      class="todo-content"
+    >
+      {{ toDo.content }}
+    </p>
   </div>
 </template>
