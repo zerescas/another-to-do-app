@@ -19,12 +19,12 @@ function createToDo(toDo: ToDo) {
   emits('create-todo', toDo);
 }
 
-function updateToDo(index: number, updates: ToDo) {
-  emits('update-todo', index, updates);
+function updateToDo(id: number, updates: ToDo) {
+  emits('update-todo', id, updates);
 }
 
-function deleteToDo(index: number) {
-  emits('delete-todo', index);
+function deleteToDo(id: number) {
+  emits('delete-todo', id);
 }
 
 // Implementation of menu with actions for todo items
@@ -51,8 +51,8 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
 <template>
   <div class="todo-list">
     <template
-      v-for="(item, index) in items"
-      :key="index"
+      v-for="item in items"
+      :key="item.id"
     >
       <div
         class="menu"
@@ -62,7 +62,7 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
           <button class="menu-button">Settings</button>
           <button
             class="menu-button"
-            @click="deleteToDo(index)"
+            @click="deleteToDo(item.id)"
           >
             Delete
           </button>
@@ -71,7 +71,7 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
         <ToDoItem
           class="menu-item"
           :toDo="item"
-          @update-todo="(updates: ToDo) => updateToDo(index, updates)"
+          @update-todo="(updates: ToDo) => updateToDo(item.id, updates)"
           @click="openToDoMenu(item)"
         ></ToDoItem>
       </div>
