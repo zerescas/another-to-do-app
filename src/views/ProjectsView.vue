@@ -36,6 +36,7 @@ watch(
       :items="projectStore.projects"
       @create-todo="projectStore.createProject"
       @update-todo="projectStore.updateProject"
+      @delete-todo="projectStore.deleteProject"
     ></ToDoList>
 
     <NavBar :settings="navBarSettings" />

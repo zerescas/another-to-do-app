@@ -2,16 +2,19 @@
 import ToDoItem from '@/components/item/ToDoItem.vue';
 import NewToDoItem from './item/NewToDoItem.vue';
 import type { ToDo } from '@/types/todo';
+import { ref } from 'vue';
+import SmallButton from './MainMenu/SmallButton.vue';
 
 const props = defineProps({
   items: {
-    type: Array<ToDo>,
+    type: Array<ToDo & MenuItemState>,
     required: true,
   },
 });
 
-const emits = defineEmits(['create-todo', 'update-todo']);
+const emits = defineEmits(['create-todo', 'update-todo', 'delete-todo']);
 
+// Methods to notify a parent component of changes to todo item
 function createToDo(toDo: ToDo) {
   emits('create-todo', toDo);
 }
@@ -19,16 +22,60 @@ function createToDo(toDo: ToDo) {
 function updateToDo(index: number, updates: ToDo) {
   emits('update-todo', index, updates);
 }
+
+function deleteToDo(index: number) {
+  emits('delete-todo', index);
+}
+
+// Implementation of menu with actions for todo items
+interface MenuItemState {
+  [isMenuOpened]?: boolean;
+}
+
+const isMenuOpened = Symbol();
+const currentOpenedItem = ref<MenuItemState>();
+
+function openToDoMenu(toDo: ToDo & MenuItemState) {
+  // Disable menu for item with active menu if you press on another item
+  if (currentOpenedItem.value && toDo !== currentOpenedItem.value) {
+    currentOpenedItem.value[isMenuOpened] = false;
+  }
+
+  toDo[isMenuOpened] = !toDo[isMenuOpened];
+  if (toDo[isMenuOpened]) {
+    currentOpenedItem.value = toDo;
+  }
+}
 </script>
 
 <template>
   <div class="todo-list">
-    <ToDoItem
+    <template
       v-for="(item, index) in items"
       :key="index"
-      :toDo="item"
-      @update-todo="(updates: ToDo) => updateToDo(index, updates)"
-    ></ToDoItem>
+    >
+      <div
+        class="menu"
+        :class="{ opened: item[isMenuOpened] }"
+      >
+        <div class="menu-buttons">
+          <button class="menu-button">Settings</button>
+          <button
+            class="menu-button"
+            @click="deleteToDo(index)"
+          >
+            Delete
+          </button>
+        </div>
+
+        <ToDoItem
+          class="menu-item"
+          :toDo="item"
+          @update-todo="(updates: ToDo) => updateToDo(index, updates)"
+          @click="openToDoMenu(item)"
+        ></ToDoItem>
+      </div>
+    </template>
 
     <NewToDoItem @create-todo="createToDo"></NewToDoItem>
   </div>
@@ -40,7 +87,53 @@ function updateToDo(index: number, updates: ToDo) {
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
-  overflow: auto;
+  overflow: hidden auto;
   padding: 18px;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu-buttons {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  inset: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: translateX(150px);
+  transition:
+    transform 0.35s,
+    opacity 0.35s;
+}
+
+.menu-button {
+  align-items: center;
+  background-color: var(--theme-color-button-negative);
+  border: none;
+  border-radius: 16px;
+  color: var(--theme-color-background);
+  cursor: pointer;
+  display: flex;
+  height: 54px;
+  justify-content: center;
+  text-align: left;
+  width: 54px;
+}
+
+.menu-item {
+  transition: transform 0.25s ease-out;
+}
+
+.menu.opened .menu-buttons {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu.opened .menu-item {
+  transform: translateX(150px);
 }
 </style>

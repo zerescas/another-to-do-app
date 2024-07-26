@@ -34,6 +34,7 @@ watch(
       :items="taskStore.tasks"
       @create-todo="taskStore.createTask"
       @update-todo="taskStore.updateTask"
+      @delete-todo="taskStore.deleteTask"
     ></ToDoList>
 
     <NavBar :settings="navBarSettings" />
