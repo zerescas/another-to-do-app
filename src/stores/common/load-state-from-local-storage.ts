@@ -17,8 +17,6 @@ export function loadStateToLocalStorage(
 
   try {
     const state = JSON.parse(stateJSON) as any;
-    console.log(`${storageKey}`);
-    console.log(state);
 
     for (const propertyToLoad of propertiesToLoad) {
       if (!state[propertyToLoad]) {
