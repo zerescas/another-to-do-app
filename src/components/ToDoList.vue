@@ -86,9 +86,9 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 16px;
+  gap: 12px;
   overflow: hidden auto;
-  padding: 18px;
+  padding: 12px;
 }
 
 .menu {
@@ -135,5 +135,12 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
 
 .menu.opened .menu-item {
   transform: translateX(150px);
+}
+
+@media (min-width: 768px) {
+  .todo-list {
+    gap: 16px;
+    padding: 16px;
+  }
 }
 </style>
