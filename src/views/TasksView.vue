@@ -6,30 +6,25 @@ import { useTaskStore } from '@/stores/taskStore';
 import type { NavBarSettings } from '@/types/navbar-settings';
 
 const taskStore = useTaskStore();
-const navBarSettings = ref<NavBarSettings>({
-  color: 'tasks',
-  customTitle: '',
-  customTitleMode: 'html',
-});
 
 const filteredTasks = computed(() => {
   return taskStore.tasks.filter((t) => t.pinnedToProject === undefined);
 });
 
-watch(
-  () => taskStore.tasks.length,
-  () => {
-    navBarSettings.value.customTitle =
-      /* html */
-      `
-        Tasks
-        <sup class="title-superscript">
-          ${taskStore.tasks.length}  
-        </sup>
-      `;
-  },
-  { immediate: true },
-);
+const navBarTitle = computed(() => {
+  return /* html */ `
+    Tasks
+    <sup class="title-superscript">
+      ${taskStore.tasks.length}  
+    </sup>
+  `;
+});
+
+const navBarSettings = ref<NavBarSettings>({
+  color: 'tasks',
+  customTitle: navBarTitle.value,
+  customTitleMode: 'html',
+});
 </script>
 
 <template>

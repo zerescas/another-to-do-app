@@ -1,33 +1,26 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import ToDoList from '../components/ToDoList.vue';
 import { useProjectStore } from '@/stores/projectStore';
 import NavBar from '@/components/NavBar.vue';
 import type { NavBarSettings } from '@/types/navbar-settings';
-import type { Project } from '@/types/project';
 
 const projectStore = useProjectStore();
 
-const navBarSettings = ref<NavBarSettings>({
-  color: 'projects',
-  customTitle: '',
-  customTitleMode: 'html',
+const navBarTitle = computed(() => {
+  return /* html */ `
+    Projects
+    <sup class="title-superscript">
+      ${projectStore.projects.length}  
+    </sup>
+  `;
 });
 
-watch(
-  () => projectStore.projects.length,
-  () => {
-    navBarSettings.value.customTitle =
-      /* html */
-      `
-        Projects
-        <sup class="title-superscript">
-          ${projectStore.projects.length}  
-        </sup>
-      `;
-  },
-  { immediate: true },
-);
+const navBarSettings = ref<NavBarSettings>({
+  color: 'projects',
+  customTitle: navBarTitle,
+  customTitleMode: 'html',
+});
 </script>
 
 <template>
