@@ -9,7 +9,13 @@
   font-size: inherit;
   outline: none;
   resize: none;
+  white-space: pre;
 }
+
+.todo-item p.todo-content {
+  white-space: pre;
+}
+
 
 .todo-item.done {
   filter: saturate(0.8) opacity(0.5);
