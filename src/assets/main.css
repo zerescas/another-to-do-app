@@ -49,6 +49,7 @@ body,
 #app {
   background-color: var(--theme-color-background);
   color: var(--theme-color-text-primary);
+  overflow: hidden;
   position: relative;
 }
 
