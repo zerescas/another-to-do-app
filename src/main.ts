@@ -7,6 +7,7 @@ import PrimeVue from 'primevue/config';
 import App from './App.vue';
 import router from './router';
 import { initPiniaStores } from './assets/pinia-init';
+import { modifyRouterPush } from './assets/router-mod';
 
 const app = createApp(App);
 
@@ -17,5 +18,6 @@ app.use(PrimeVue, {
 });
 
 initPiniaStores();
+modifyRouterPush(router);
 
 app.mount('#app');
