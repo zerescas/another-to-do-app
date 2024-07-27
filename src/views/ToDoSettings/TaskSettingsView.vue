@@ -61,7 +61,7 @@ function updateTaskColor(color: string) {
 
             <div class="item-card setting-card column-span-2">
               <div class="setting-card-title">Project</div>
-              <div class="setting-card-value">
+              <div class="setting-card-value setting-card-value--limited">
                 {{ pinnedToProjectName ?? 'Not pinned' }}
               </div>
             </div>

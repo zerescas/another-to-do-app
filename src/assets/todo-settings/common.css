@@ -43,6 +43,13 @@
   font-weight: 300;
 }
 
+.setting-card-value--limited {
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @media (min-width: 768px) {
   .settings-cards {
     display: grid;
