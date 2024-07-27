@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { defineProps, type PropType } from 'vue';
+import { defineProps, type PropType, type Ref } from 'vue';
 
 export interface MainMenuButtonProps {
   title: string;
-  titleSuperscript?: string;
+  titleSuperscript?: string | Ref<string>;
   tip: string;
   color?: string;
   onClick: Function;

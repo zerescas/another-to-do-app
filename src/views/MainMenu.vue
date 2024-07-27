@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
 import { useTaskStore } from '@/stores/taskStore';
 import { useProjectStore } from '@/stores/projectStore';
@@ -14,36 +14,30 @@ const router = useRouter();
 const taskStore = useTaskStore();
 const projectStore = useProjectStore();
 
+const tasksCount = computed(() => {
+  return `${taskStore.tasks.length}`;
+});
+
+const projectsCount = computed(() => {
+  return `${projectStore.projects.length}`;
+});
+
 const buttons = ref<Array<MainMenuButtonProps>>([
   {
     title: 'Tasks',
+    titleSuperscript: tasksCount,
     tip: 'Write down your plans and assign them to a project later',
     color: 'tasks',
     onClick: () => router.push({ name: 'Tasks' }),
   },
   {
     title: 'Projects',
+    titleSuperscript: projectsCount,
     tip: 'Create and categorize your tasks by projects',
     color: 'projects',
     onClick: () => router.push({ name: 'Projects' }),
   },
 ]);
-
-watch(
-  () => taskStore.tasks,
-  (newTasks) => {
-    buttons.value[0].titleSuperscript = `${newTasks.length}`;
-  },
-  { immediate: true },
-);
-
-watch(
-  () => projectStore.projects,
-  (newProjects) => {
-    buttons.value[1].titleSuperscript = `${newProjects.length}`;
-  },
-  { immediate: true },
-);
 </script>
 
 <template>
