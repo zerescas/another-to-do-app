@@ -9,7 +9,6 @@
 /* Modifier that keeps content in center of the screen */
 .app-layout--centered {
   margin: auto;
-  width: unset;
 }
 
 /* Modifier that adds padding around the layout */
