@@ -11,6 +11,7 @@ import type { NavBarSettings } from '@/types/navbar-settings';
 import type { Project } from '@/types/project';
 import '@/assets/todo-settings/common.css';
 import type { Task } from '@/types/task';
+import { pinTaskToProject } from '@/stores/common/pin-task-to-project';
 
 const route = useRoute();
 const routeItemId = route.params.id;
@@ -38,11 +39,7 @@ const pinnedTasks = computed(() => {
 function createPinnedTask(task: Task) {
   const newTask = taskStore.createTask(task);
 
-  newTask.pinnedToProject = projectItem?.value.id as number;
-  projectItem?.value.pinnedTasks.push(newTask.id);
-
-  taskStore.saveStateToLocalStorage();
-  projectStore.saveStateToLocalStorage();
+  pinTaskToProject(newTask, projectItem?.value as Project, taskStore, projectStore);
 }
 
 function deletePinnedTask(id: number) {
