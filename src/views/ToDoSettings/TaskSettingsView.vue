@@ -22,6 +22,7 @@ const navBarSettings = ref<NavBarSettings>({
   color: 'tasks',
   customTitle: 'Task Edit',
   customTitleMode: 'text',
+  fallbackBackRouteName: 'Tasks',
 });
 
 const pinnedToProjectName = computed(() => {
