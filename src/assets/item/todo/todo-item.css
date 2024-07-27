@@ -2,6 +2,16 @@
   gap: 12px;
 }
 
+.todo-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.todo-item .subitems-count {
+  font-weight: 700;
+}
+
 .todo-item .todo-content {
   background-color: transparent;
   border: none;
@@ -15,7 +25,6 @@
 .todo-item p.todo-content {
   white-space: pre;
 }
-
 
 .todo-item.done {
   filter: saturate(0.8) opacity(0.5);
@@ -33,6 +42,10 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  .todo-item .subitems-count {
+    color: var(--item-card-accent);
+  }
+
   .item-card.done .todo-content {
     color: var(--item-card-accent);
   }

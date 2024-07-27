@@ -6,6 +6,7 @@ import type { PropType } from 'vue';
 import '@/assets/item/item-card.css';
 import '@/assets/item/todo/todo-item.css';
 import type { ToDoItemSettings } from '@/types/todo-item-settings';
+import type { Project } from '@/types/project';
 
 const props = defineProps({
   toDo: {
@@ -35,21 +36,30 @@ function updateToDo(updates: ToDo) {
       @input="updateToDo({ done: $event } as ToDo)"
     />
 
-    <Textarea
-      v-if="settings?.editableContent"
-      ref="toDoContentRef"
-      class="todo-content"
-      :value="toDo.content"
-      @input="updateToDo({ content: ($event.target as HTMLInputElement).value } as ToDo)"
-      maxlength="200"
-      autoResize
-      rows="1"
-    ></Textarea>
-    <p
-      v-else
-      class="todo-content"
-    >
-      {{ toDo.content }}
-    </p>
+    <div class="todo-content-wrapper">
+      <Textarea
+        v-if="settings?.editableContent"
+        ref="toDoContentRef"
+        class="todo-content"
+        :value="toDo.content"
+        @input="updateToDo({ content: ($event.target as HTMLInputElement).value } as ToDo)"
+        maxlength="200"
+        autoResize
+        rows="1"
+      ></Textarea>
+      <p
+        v-else
+        class="todo-content"
+      >
+        {{ toDo.content }}
+      </p>
+
+      <sup
+        v-if="(toDo as Project).pinnedTasks"
+        class="subitems-count"
+      >
+        + {{ (toDo as Project).pinnedTasks.length }} Tasks
+      </sup>
+    </div>
   </div>
 </template>

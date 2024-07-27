@@ -123,9 +123,18 @@ function selectProjectInList(project: Project | null) {
               :style="`--item-card-accent: ${project.color}`"
               @click="selectProjectInList(project)"
             >
-              <p class="todo-content">
-                {{ project.content }}
-              </p>
+              <div class="todo-content-wrapper">
+                <p class="todo-content">
+                  {{ project.content }}
+                </p>
+
+                <sup
+                  v-if="project.pinnedTasks"
+                  class="subitems-count"
+                >
+                  + {{ project.pinnedTasks.length }} Tasks
+                </sup>
+              </div>
             </div>
           </div>
         </template>
