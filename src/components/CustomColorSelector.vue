@@ -30,6 +30,7 @@ function updateColor(event: Event) {
 
 <style scoped>
 .custom-color-selector {
+  cursor: pointer;
   position: relative;
 }
 
