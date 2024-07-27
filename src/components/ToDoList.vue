@@ -4,6 +4,8 @@ import NewToDoItem from './item/NewToDoItem.vue';
 import type { ToDo } from '@/types/todo';
 import { ref, type PropType } from 'vue';
 import SmallButton from './MainMenu/SmallButton.vue';
+import IconSettings from '@/components/icons/IconSettings.vue';
+import IconDelete from '@/components/icons/IconDelete.vue';
 
 type ToDoTypes = 'task' | 'project';
 
@@ -87,13 +89,13 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
               })
             "
           >
-            Settings
+            <IconSettings />
           </button>
           <button
             class="menu-button"
             @click="deleteToDo(item.id)"
           >
-            Delete
+            <IconDelete />
           </button>
         </div>
 
@@ -151,6 +153,11 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
   justify-content: center;
   text-align: left;
   width: 54px;
+}
+
+.menu-button svg {
+  width: 65%;
+  height: 65%;
 }
 
 .menu-item {
