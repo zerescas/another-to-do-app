@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import ToDoList from '../components/ToDoList.vue';
 import NavBar from '../components/NavBar.vue';
 import { useTaskStore } from '@/stores/taskStore';
@@ -10,6 +10,10 @@ const navBarSettings = ref<NavBarSettings>({
   color: 'tasks',
   customTitle: '',
   customTitleMode: 'html',
+});
+
+const filteredTasks = computed(() => {
+  return taskStore.tasks.filter((t) => t.pinnedToProject === undefined);
 });
 
 watch(
@@ -31,7 +35,7 @@ watch(
 <template>
   <div class="app-layout app-layout--desktop-float">
     <ToDoList
-      :items="taskStore.tasks"
+      :items="filteredTasks"
       :toDoType="'task'"
       @create-todo="taskStore.createTask"
       @update-todo="taskStore.updateTask"
