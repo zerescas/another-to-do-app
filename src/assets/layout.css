@@ -13,7 +13,11 @@
 
 /* Modifier that adds padding around the layout */
 .app-layout--padding {
-  padding: 24px;
+  padding: 18px;
+}
+
+.app-layout--content {
+  flex-grow: 1;
 }
 
 @media (min-width: 768px) {
@@ -24,6 +28,10 @@
 
   .app-layout--centered {
     margin: auto;
+  }
+
+  .app-layout--padding {
+    padding: 24px;
   }
 
   /* Modifier that makes the layout floating (adds padding), but only for desktop version */

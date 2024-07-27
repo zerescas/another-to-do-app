@@ -25,13 +25,15 @@ const navBarSettings = ref<NavBarSettings>({
 
 <template>
   <div class="app-layout app-layout--desktop-float">
-    <ToDoList
-      :items="projectStore.projects"
-      :toDoType="'project'"
-      @create-todo="projectStore.createProject"
-      @update-todo="projectStore.updateProject"
-      @delete-todo="projectStore.deleteProject"
-    ></ToDoList>
+    <div class="app-layout--content app-layout--padding">
+      <ToDoList
+        :items="projectStore.projects"
+        :toDoType="'project'"
+        @create-todo="projectStore.createProject"
+        @update-todo="projectStore.updateProject"
+        @delete-todo="projectStore.deleteProject"
+      ></ToDoList>
+    </div>
 
     <NavBar :settings="navBarSettings" />
   </div>
