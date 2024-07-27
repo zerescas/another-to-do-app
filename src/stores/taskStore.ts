@@ -57,4 +57,7 @@ export const useTaskStore = defineStore('tasks', {
       localStorage.setItem('taskStore', JSON.stringify(currentState));
     },
   },
+  getters: {
+    tasksWithoutProjectPin: (state) => state.tasks.filter((t) => t.pinnedToProject === undefined),
+  },
 });
