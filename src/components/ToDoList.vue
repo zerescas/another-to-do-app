@@ -13,7 +13,7 @@ const props = defineProps({
     required: true,
   },
   toDoType: {
-    type: Object as PropType<ToDoTypes>,
+    type: String as PropType<ToDoTypes>,
     required: true,
   },
 });
