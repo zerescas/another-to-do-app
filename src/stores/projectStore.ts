@@ -16,7 +16,10 @@ export const useProjectStore = defineStore('projects', {
   actions: {
     createProject(newProject: Project) {
       newProject.id = this._id++;
-      newProject.pinnedTasks = [];
+
+      if (newProject.pinnedTasks == undefined) {
+        newProject.pinnedTasks = [];
+      }
 
       this.projects.push(newProject);
       this.saveStateToLocalStorage();
