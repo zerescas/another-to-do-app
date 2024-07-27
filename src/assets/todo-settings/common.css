@@ -1,25 +1,52 @@
-.settings-container {
+.settings-container,
+.settings-section,
+.subitems-section,
+.settings-cards {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.settings-container {
   flex-grow: 1;
-  gap: 16px;
+  gap: 28px;
   overflow: auto;
 }
 
-.settings-section,
-.subitems-section {
-  display: flex;
-  flex-direction: column;
+.settings-cards {
   gap: 8px;
 }
 
-@media (min-width: 768px) {
-  .settings-container {
-    gap: 28px;
-  }
+.setting-card {
+  display: flex;
+  gap: 32px;
+}
 
-  .settings-section,
-  .subitems-section {
-    gap: 12px;
+.setting-card.column-span-1 {
+  grid-column: span 1;
+}
+
+.setting-card.column-span-2 {
+  grid-column: span 2;
+}
+
+.setting-card.column-span-3 {
+  grid-column: span 3;
+}
+
+.setting-card-title {
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.setting-card-value {
+  font-weight: 300;
+}
+
+@media (min-width: 768px) {
+  .settings-cards {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

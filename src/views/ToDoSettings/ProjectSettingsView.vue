@@ -6,6 +6,7 @@ import { useProjectStore } from '@/stores/projectStore';
 import ToDoItem from '@/components/item/ToDoItem.vue';
 import NavBar from '@/components/NavBar.vue';
 import ToDoList from '@/components/ToDoList.vue';
+import CustomColorSelector from '@/components/CustomColorSelector.vue';
 import type { NavBarSettings } from '@/types/navbar-settings';
 import type { Project } from '@/types/project';
 import '@/assets/todo-settings/common.css';
@@ -49,6 +50,12 @@ function deletePinnedTask(id: number) {
   projectItem.value.pinnedTasks = projectItem.value.pinnedTasks.filter((taskId) => taskId !== id);
   taskStore.deleteTask(id);
 }
+
+function updateProjectColor(color: string) {
+  if (projectItem) {
+    projectStore.updateProject(projectItem?.value.id, { color: color });
+  }
+}
 </script>
 
 <template>
@@ -63,13 +70,20 @@ function deletePinnedTask(id: number) {
           "
         ></ToDoItem>
 
-        <section
-          v-if="0"
-          class="settings-section"
-        >
+        <section class="settings-section">
           <h2>Settings</h2>
 
-          <div class="item-card">Color</div>
+          <div class="settings-cards">
+            <div class="item-card setting-card column-span-3">
+              <div class="setting-card-title">Color</div>
+              <div class="setting-card-value">
+                <CustomColorSelector
+                  :value="projectItem.color ?? ''"
+                  @input="updateProjectColor"
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
         <section class="subitems-section">

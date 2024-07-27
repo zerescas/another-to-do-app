@@ -5,7 +5,7 @@ import { useTaskStore } from '@/stores/taskStore';
 import { useProjectStore } from '@/stores/projectStore';
 import ToDoItem from '@/components/item/ToDoItem.vue';
 import NavBar from '@/components/NavBar.vue';
-import ToDoList from '@/components/ToDoList.vue';
+import CustomColorSelector from '@/components/CustomColorSelector.vue';
 import type { NavBarSettings } from '@/types/navbar-settings';
 import type { Task } from '@/types/task';
 import '@/assets/todo-settings/common.css';
@@ -27,6 +27,12 @@ const navBarSettings = ref<NavBarSettings>({
 const pinnedToProjectName = computed(() => {
   return projectStore.getProject(taskItem?.value.pinnedToProject as number)?.value.content;
 });
+
+function updateTaskColor(color: string) {
+  if (taskItem) {
+    taskStore.updateTask(taskItem?.value.id, { color: color });
+  }
+}
 </script>
 
 <template>
@@ -42,10 +48,23 @@ const pinnedToProjectName = computed(() => {
         <section class="settings-section">
           <h2>Settings</h2>
 
-          <div v-if="0" class="item-card">Color</div>
-          <div class="item-card">
-            Project -
-            {{ pinnedToProjectName ?? 'none' }}
+          <div class="settings-cards">
+            <div class="item-card setting-card">
+              <div class="setting-card-title">Color</div>
+              <div class="setting-card-value">
+                <CustomColorSelector
+                  :value="taskItem.color ?? ''"
+                  @input="updateTaskColor"
+                />
+              </div>
+            </div>
+
+            <div class="item-card setting-card column-span-2">
+              <div class="setting-card-title">Project</div>
+              <div class="setting-card-value">
+                {{ pinnedToProjectName ?? 'none' }}
+              </div>
+            </div>
           </div>
         </section>
       </template>
