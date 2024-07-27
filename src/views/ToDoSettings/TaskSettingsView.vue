@@ -36,8 +36,8 @@ function updateTaskColor(color: string) {
 </script>
 
 <template>
-  <div class="app-layout app-layout--padding">
-    <div class="settings-container">
+  <div class="app-layout app-layout--desktop-float">
+    <div class="settings-container app-layout--padding">
       <template v-if="taskItem">
         <ToDoItem
           :settings="{ editableContent: true }"
