@@ -22,7 +22,7 @@ export const useTaskStore = defineStore('tasks', {
       return newTask;
     },
 
-    updateTask(id: number, updates: Task) {
+    updateTask(id: number, updates: Partial<Task>) {
       const index = this.tasks.findIndex((t) => t.id == id);
       if (index === -1) return;
 

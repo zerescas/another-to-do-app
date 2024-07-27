@@ -24,7 +24,7 @@ export const useProjectStore = defineStore('projects', {
       return newProject;
     },
 
-    updateProject(id: number, updates: Project) {
+    updateProject(id: number, updates: Partial<Project>) {
       const index = this.projects.findIndex((p) => p.id == id);
       if (index === -1) return;
 
