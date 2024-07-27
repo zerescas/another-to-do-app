@@ -4,4 +4,5 @@ export interface NavBarSettings {
   color: string;
   customTitleMode?: NavBarCustomTitleMode;
   customTitle?: string;
+  fallbackBackRouteName?: string;
 }

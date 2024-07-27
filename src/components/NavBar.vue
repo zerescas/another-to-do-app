@@ -3,8 +3,10 @@ import { computed, type PropType } from 'vue';
 import { useRouter } from 'vue-router';
 import IconBack from '../components/icons/IconBack.vue';
 import type { NavBarSettings } from '@/types/navbar-settings';
+import { useNavigationStore } from '@/stores/navigationStore';
 
 const router = useRouter();
+const navigationStore = useNavigationStore();
 
 const props = defineProps({
   settings: {
@@ -19,6 +21,23 @@ const title = computed(() => {
     return router.currentRoute.value.name;
   }
 });
+
+function goBack() {
+  // If there is a previous route, just go back
+  if (navigationStore.previousRouteName) {
+    router.back();
+    return;
+  }
+
+  // If not, go to:
+  if (props.settings?.fallbackBackRouteName) {
+    // fallbackBackRouteName route
+    router.replace({ name: props.settings?.fallbackBackRouteName, params: { fallback: 'y' } });
+  } else {
+    // root route
+    router.replace('/');
+  }
+}
 </script>
 
 <template>
@@ -30,7 +49,7 @@ const title = computed(() => {
     <header class="header">
       <button
         class="button-back"
-        @click="$router.back()"
+        @click="goBack"
       >
         <IconBack />
       </button>
