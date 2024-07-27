@@ -3,6 +3,8 @@ import type { Task } from '@/types/task';
 import type { Ref } from 'vue';
 
 export function unpinTaskFromProject(task: Task, taskStore: any, projectStore: any) {
+  if (task.pinnedToProject == undefined) return;
+
   const projectMaster: Ref<Project> = projectStore.getProject(task.pinnedToProject);
 
   projectMaster.value.pinnedTasks = projectMaster.value.pinnedTasks.filter((t) => t !== task.id);
