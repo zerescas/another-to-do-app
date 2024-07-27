@@ -9,6 +9,7 @@
 .custom-checkbox .checkbox {
   border: solid 2px var(--theme-color-text-primary);
   border-radius: 100%;
+  cursor: pointer;
   display: flex;
   height: 20px;
   position: relative;
