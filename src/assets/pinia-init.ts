@@ -7,18 +7,39 @@ import type { ToDo } from '@/types/todo';
 export function initPiniaStores() {
   const taskStore = useTaskStore();
   if (!taskStore.loadStateFromLocalStorage()) {
-    const tasks: Array<ToDo> = [
+    const tasks: Array<Task> = [
       {
         id: 0,
-        content: 'Learn JavaScript',
-        color: '#C1FEBC',
-        done: true,
+        content: 'Learn Typescript',
+        color: '#CF9EF5',
+        done: false,
       },
       {
-        id: 0,
-        content: 'Finish the walkthrough of Elden Ring',
-        color: '#F3BFFB',
+        id: 1,
+        content: 'Learn Vue',
+        color: '#C1FEBC',
         done: false,
+      },
+      {
+        id: 2,
+        content: 'Implement Main Menu',
+        color: '#F5A798',
+        done: false,
+        pinnedToProject: 0,
+      },
+      {
+        id: 3,
+        content: 'Implement Tasks/Projects Views',
+        color: '#98F5D0',
+        done: false,
+        pinnedToProject: 0,
+      },
+      {
+        id: 4,
+        content: 'Implement Settings for Tasks/Projects',
+        color: '#AC98F5',
+        done: false,
+        pinnedToProject: 0,
       },
     ];
 
@@ -29,30 +50,13 @@ export function initPiniaStores() {
 
   const projectStore = useProjectStore();
   if (!projectStore.loadStateFromLocalStorage()) {
-    const projects: Array<ToDo> = [
+    const projects: Array<Project> = [
       {
         id: 0,
-        content: "Stars don't twinkle",
-        color: '#ecd786',
-        done: true,
-      },
-      {
-        id: 0,
-        content: "The moon doesn't shine",
-        color: '#a255fe',
-        done: true,
-      },
-      {
-        id: 0,
-        content: "Birds don't sing",
-        color: '#9b1101',
+        content: 'Make another to do app',
+        color: '#F5EA81',
         done: false,
-      },
-      {
-        id: 0,
-        content: "The wind doesn't blow",
-        color: '#019b70',
-        done: false,
+        pinnedTasks: [2, 3, 4],
       },
     ];
 
