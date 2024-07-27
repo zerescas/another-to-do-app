@@ -50,6 +50,10 @@
   white-space: nowrap;
 }
 
+.setting-card-value--editable {
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .settings-cards {
     display: grid;
