@@ -3,13 +3,13 @@ import { defineStore } from 'pinia';
 import type { Task } from '@/types/task';
 import { loadStateToLocalStorage } from './common/load-state-from-local-storage';
 
-interface State {
+interface TasksState {
   _id: number;
   tasks: Array<Task>;
 }
 
 export const useTaskStore = defineStore('tasks', {
-  state: (): State => ({
+  state: (): TasksState => ({
     _id: 0,
     tasks: [],
   }),
@@ -52,7 +52,7 @@ export const useTaskStore = defineStore('tasks', {
       const currentState = {
         _id: this._id,
         tasks: this.tasks,
-      } as State;
+      } as TasksState;
 
       localStorage.setItem('taskStore', JSON.stringify(currentState));
     },

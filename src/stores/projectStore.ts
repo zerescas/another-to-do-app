@@ -3,13 +3,13 @@ import { defineStore } from 'pinia';
 import { toRef } from 'vue';
 import { loadStateToLocalStorage } from './common/load-state-from-local-storage';
 
-interface State {
+interface ProjectsState {
   _id: number;
   projects: Array<Project>;
 }
 
 export const useProjectStore = defineStore('projects', {
-  state: (): State => ({
+  state: (): ProjectsState => ({
     _id: 0,
     projects: [],
   }),
@@ -54,7 +54,7 @@ export const useProjectStore = defineStore('projects', {
       const currentState = {
         _id: this._id,
         projects: this.projects,
-      } as State;
+      } as ProjectsState;
 
       localStorage.setItem('projectStore', JSON.stringify(currentState));
     },
