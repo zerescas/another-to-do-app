@@ -81,7 +81,7 @@ function selectProjectInList(project: Project | null) {
             <div class="item-card setting-card column-span-2">
               <div class="setting-card-title">Project</div>
               <div
-                class="setting-card-value setting-card-value--limited"
+                class="setting-card-value setting-card-value--limited setting-card-value--editable"
                 @click="isPinToProjectPopupOpened = true"
               >
                 {{ pinnedToProjectName ?? 'Not pinned' }}
