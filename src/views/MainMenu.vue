@@ -14,9 +14,7 @@ const router = useRouter();
 const taskStore = useTaskStore();
 const projectStore = useProjectStore();
 
-const tasksCount = computed(() => {
-  return `${taskStore.tasks.length}`;
-});
+const tasksWithoutProjectPinCount = computed(() => `${taskStore.tasksWithoutProjectPin.length}`);
 
 const projectsCount = computed(() => {
   return `${projectStore.projects.length}`;
@@ -25,7 +23,7 @@ const projectsCount = computed(() => {
 const buttons = ref<Array<MainMenuButtonProps>>([
   {
     title: 'Tasks',
-    titleSuperscript: tasksCount,
+    titleSuperscript: tasksWithoutProjectPinCount,
     tip: 'Write down your plans and assign them to a project later',
     color: 'tasks',
     onClick: () => router.push({ name: 'Tasks' }),
