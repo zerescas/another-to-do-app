@@ -63,7 +63,7 @@ function pressCloseButton() {
 
 .popup {
   backdrop-filter: blur(12px);
-  background-color: #00000010;
+  background-color: #eeeeee8e;
   display: flex;
   inset: 0;
   overflow: auto;
