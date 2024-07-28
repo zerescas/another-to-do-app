@@ -100,9 +100,8 @@ function pressCloseButton() {
   margin-top: 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .popup {
-    background-color: #00000080;
-  }
+/* Dark theme */
+[data-theme='dark'] .popup {
+  background-color: #00000080;
 }
 </style>

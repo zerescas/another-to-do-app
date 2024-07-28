@@ -127,13 +127,12 @@ function goBack() {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .header-container {
-    color: var(--header-accent);
-  }
+/* Dark theme */
+[data-theme='dark'] .header-container {
+  color: var(--header-accent);
+}
 
-  .header-line {
-    box-shadow: 0 -2px 10px var(--header-accent);
-  }
+[data-theme='dark'] .header-line {
+  box-shadow: 0 -2px 10px var(--header-accent);
 }
 </style>

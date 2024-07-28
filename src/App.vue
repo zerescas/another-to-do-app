@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router';
+import { useThemeWatcher } from './composable/theme-watcher';
 import ViewWrapper from './components/ViewWrapper.vue';
+
+const appContainer = document.getElementById('app');
+if (appContainer) {
+  useThemeWatcher(appContainer);
+}
 </script>
 
 <template>

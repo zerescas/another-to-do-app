@@ -26,9 +26,8 @@ function updateChecked(event: Event) {
 </template>
 
 <style scoped>
-@media (prefers-color-scheme: dark) {
-  .custom-checkbox {
-    --custom-checkbox-accent: var(--item-card-accent);
-  }
+/* Dark theme */
+[data-theme='dark'] .custom-checkbox {
+  --custom-checkbox-accent: var(--item-card-accent);
 }
 </style>

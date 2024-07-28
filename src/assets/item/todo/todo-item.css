@@ -42,12 +42,11 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .todo-item .subitems-count {
-    color: var(--item-card-accent);
-  }
+/* Dark theme */
+[data-theme='dark'] .todo-item .subitems-count {
+  color: var(--item-card-accent);
+}
 
-  .item-card.done .todo-content {
-    color: var(--item-card-accent);
-  }
+[data-theme='dark'] .item-card.done .todo-content {
+  color: var(--item-card-accent);
 }

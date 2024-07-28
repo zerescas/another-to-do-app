@@ -143,26 +143,26 @@ function getImageAltFromImagePath(imagePath: string) {
   letter-spacing: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* "Achieved With" section */
+/* Dark theme */
 
-  /* Specific classes for each item */
-  .achieved-with-ts {
-    background-color: #3179c74f;
-    color: #418fe2ef;
-  }
+/* "Achieved With" section */
 
-  .achieved-with-vue,
-  .achieved-with-primevue {
-    background-color: #46b4864d;
-    color: #2fb37cd5;
-  }
+/* Specific classes for each item */
+[data-theme='dark'] .achieved-with-ts {
+  background-color: #3179c74f;
+  color: #418fe2ef;
+}
 
-  /* "Made by" section */
-  .author-link {
-    background: linear-gradient(90deg, var(--theme-color-tasks), var(--theme-color-projects));
-    background-clip: text;
-    color: transparent;
-  }
+[data-theme='dark'] .achieved-with-vue,
+[data-theme='dark'] .achieved-with-primevue {
+  background-color: #46b4864d;
+  color: #2fb37cd5;
+}
+
+/* "Made by" section */
+[data-theme='dark'] .author-link {
+  background: linear-gradient(90deg, var(--theme-color-tasks), var(--theme-color-projects));
+  background-clip: text;
+  color: transparent;
 }
 </style>
