@@ -25,7 +25,7 @@ const navBarSettings = ref<NavBarSettings>({
 
 <template>
   <div class="app-layout app-layout--desktop-float">
-    <div class="app-layout--content app-layout--padding">
+    <div class="app-layout--content app-layout--scrollable app-layout--padding">
       <ToDoList
         :items="projectStore.projects"
         :toDoType="'project'"
