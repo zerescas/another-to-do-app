@@ -72,4 +72,13 @@ export const useThemeStore = defineStore('theme', {
       localStorage.setItem('isUseDeviceTheme', String(this.isUseDeviceTheme));
     },
   },
+  getters: {
+    getCurrentTheme(state) {
+      if (this.isUseDeviceTheme) {
+        return 'Device';
+      }
+
+      return state.currentTheme === 'dark' ? 'Dark' : 'Light';
+    },
+  },
 });
