@@ -73,7 +73,7 @@ const buttons = ref<Array<MainMenuButtonProps>>([
     </div>
   </div>
 
-  <Teleport :to="`#app`">
+  <Teleport :to="`#popup`">
     <CustomPopup
       :isPopupOpened="isAboutPopupOpened"
       :contentWrapperClass="'app-layout app-layout--centered app-layout--padding about-popup-wrapper'"

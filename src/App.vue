@@ -10,6 +10,9 @@ if (appContainer) {
 </script>
 
 <template>
+  <!-- Container to use as the destination for Teleportation popups -->
+  <div id="popup"></div>
+
   <div id="current-route-view">
     <RouterView v-slot="{ Component }">
       <Transition name="scale-fade">
