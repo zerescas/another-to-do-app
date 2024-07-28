@@ -31,7 +31,7 @@ const themesButtons = [
     action: () => {
       themeStore.setIsUseDeviceTheme(false);
       themeStore.setTheme('light');
-      isThemeListPopupOpened.value = false;
+      setTimeout(() => (isThemeListPopupOpened.value = false), 400);
     },
   },
   {
@@ -39,14 +39,14 @@ const themesButtons = [
     action: () => {
       themeStore.setIsUseDeviceTheme(false);
       themeStore.setTheme('dark');
-      isThemeListPopupOpened.value = false;
+      setTimeout(() => (isThemeListPopupOpened.value = false), 400);
     },
   },
   {
     content: 'Device',
     action: () => {
       themeStore.setIsUseDeviceTheme(true);
-      isThemeListPopupOpened.value = false;
+      setTimeout(() => (isThemeListPopupOpened.value = false), 400);
     },
   },
 ];
