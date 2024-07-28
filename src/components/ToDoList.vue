@@ -160,7 +160,9 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
 }
 
 .menu-item {
-  transition: transform 0.25s ease-out;
+  transition:
+    transform 0.25s ease-out,
+    margin-right 0.27s ease-out;
 }
 
 .menu.opened .menu-buttons {
@@ -169,6 +171,7 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
 }
 
 .menu.opened .menu-item {
+  margin-right: 150px;
   transform: translateX(150px);
 }
 
