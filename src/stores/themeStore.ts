@@ -47,10 +47,19 @@ export const useThemeStore = defineStore('theme', {
 
     loadThemeFromLocalStorage() {
       const themeFromLocalStorage = localStorage.getItem('theme') as Themes;
+      const isUseDeviceThemeFromLocalStorage = localStorage.getItem('isUseDeviceTheme');
 
       // Use a theme from localStorage if its value is acceptable
       if (THEME_VALUES.includes(themeFromLocalStorage)) {
         this.setTheme(themeFromLocalStorage);
+      }
+
+      // Use a "isUseDeviceTheme" from localStorage if its value is acceptable
+      if (
+        isUseDeviceThemeFromLocalStorage === 'true' ||
+        isUseDeviceThemeFromLocalStorage === 'false'
+      ) {
+        this.setIsUseDeviceTheme(isUseDeviceThemeFromLocalStorage === 'true');
         return;
       }
 
@@ -60,6 +69,7 @@ export const useThemeStore = defineStore('theme', {
 
     saveThemeToLocalStorage() {
       localStorage.setItem('theme', this.currentTheme);
+      localStorage.setItem('isUseDeviceTheme', String(this.isUseDeviceTheme));
     },
   },
 });
