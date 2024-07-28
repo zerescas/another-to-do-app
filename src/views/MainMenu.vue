@@ -8,11 +8,15 @@ import Button, { type MainMenuButtonProps } from '../components/MainMenu/Button.
 import SmallButton from '../components/MainMenu/SmallButton.vue';
 import IconSettings from '../components/icons/IconSettings.vue';
 import IconAbout from '../components/icons/IconAbout.vue';
+import CustomPopup from '@/components/CustomPopup.vue';
+import AboutView from './AboutView.vue';
 
 const router = useRouter();
 
 const taskStore = useTaskStore();
 const projectStore = useProjectStore();
+
+const isAboutPopupOpened = ref(false);
 
 const tasksWithoutProjectPinCount = computed(() => `${taskStore.tasksWithoutProjectPin.length}`);
 
@@ -62,12 +66,22 @@ const buttons = ref<Array<MainMenuButtonProps>>([
           <IconSettings :style="`width: 60%; height: 60%;`" />
         </SmallButton>
 
-        <SmallButton>
+        <SmallButton @click="isAboutPopupOpened = true">
           <IconAbout :style="`width: 60%; height: 60%;`" />
         </SmallButton>
       </div>
     </div>
   </div>
+
+  <Teleport :to="`#app`">
+    <CustomPopup
+      :isPopupOpened="isAboutPopupOpened"
+      :contentWrapperClass="'app-layout app-layout--centered app-layout--padding about-popup-wrapper'"
+      @closePressed="isAboutPopupOpened = false"
+    >
+      <AboutView />
+    </CustomPopup>
+  </Teleport>
 </template>
 
 <style scoped>
