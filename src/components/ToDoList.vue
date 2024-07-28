@@ -118,7 +118,6 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
   flex-direction: column;
   flex-grow: 1;
   gap: 12px;
-  overflow: hidden auto;
 }
 
 .menu {
@@ -138,6 +137,7 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
   transition:
     transform 0.35s,
     opacity 0.35s;
+  width: fit-content;
 }
 
 .menu-button {
