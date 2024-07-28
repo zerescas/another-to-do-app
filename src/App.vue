@@ -4,13 +4,15 @@ import ViewWrapper from './components/ViewWrapper.vue';
 </script>
 
 <template>
-  <RouterView v-slot="{ Component }">
-    <Transition name="scale-fade">
-      <ViewWrapper :key="$route.fullPath">
-        <component :is="Component"></component>
-      </ViewWrapper>
-    </Transition>
-  </RouterView>
+  <div id="current-route-view">
+    <RouterView v-slot="{ Component }">
+      <Transition name="scale-fade">
+        <ViewWrapper :key="$route.fullPath">
+          <component :is="Component"></component>
+        </ViewWrapper>
+      </Transition>
+    </RouterView>
+  </div>
 </template>
 
 <style scoped>
