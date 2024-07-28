@@ -4,9 +4,14 @@ import type { Project } from '@/types/project';
 import type { Task } from '@/types/task';
 import type { ToDo } from '@/types/todo';
 
-export function initPiniaStores() {
+export function initPiniaStores(forceToDefaults?: boolean) {
   const taskStore = useTaskStore();
-  if (!taskStore.loadStateFromLocalStorage()) {
+
+  if (forceToDefaults) {
+    taskStore.$reset();
+  }
+
+  if (forceToDefaults || !taskStore.loadStateFromLocalStorage()) {
     const tasks: Array<Task> = [
       {
         id: 0,
@@ -49,7 +54,12 @@ export function initPiniaStores() {
   }
 
   const projectStore = useProjectStore();
-  if (!projectStore.loadStateFromLocalStorage()) {
+
+  if (forceToDefaults) {
+    projectStore.$reset();
+  }
+
+  if (forceToDefaults || !projectStore.loadStateFromLocalStorage()) {
     const projects: Array<Project> = [
       {
         id: 0,
