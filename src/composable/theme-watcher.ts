@@ -38,19 +38,16 @@ export function useThemeWatcher(appRoot: HTMLElement) {
       appRoot.setAttribute('data-theme', newTheme);
       saveThemeToLocalStorage();
     },
-    { immediate: true },
   );
 
   watch(
     () => themeStore.isDarkThemeOnDevice,
     () => themeStore.isUseDeviceTheme && themeStore.setThemeFromDeviceTheme(),
-    { immediate: true },
   );
 
   watch(
     () => themeStore.isUseDeviceTheme,
     (newIsUseDeviceTheme) => newIsUseDeviceTheme && themeStore.setThemeFromDeviceTheme(),
-    { immediate: true },
   );
 
   loadThemeFromLocalStorage();
