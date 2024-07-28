@@ -62,8 +62,7 @@ function pressCloseButton() {
 }
 
 .popup {
-  backdrop-filter: blur(12px);
-  background-color: #eeeeee8e;
+  background-color: #e7e7e7f1;
   display: flex;
   inset: 0;
   overflow: auto;
@@ -103,6 +102,6 @@ function pressCloseButton() {
 
 /* Dark theme */
 [data-theme='dark'] .popup {
-  background-color: #00000080;
+  background-color: #000000da;
 }
 </style>
