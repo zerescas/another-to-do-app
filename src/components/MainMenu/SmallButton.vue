@@ -1,19 +1,7 @@
-<script setup lang="ts">
-import { defineProps } from 'vue';
-
-const props = defineProps({
-  settings: {
-    type: Object,
-    required: true,
-  },
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <button
-    class="button"
-    @click="settings.onClick"
-  >
+  <button class="button">
     <slot></slot>
   </button>
 </template>
