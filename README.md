@@ -2,7 +2,7 @@
 
 Hey, this is another to do app based on 'create-vue' template.
 
-![MainMenu](https://github.com/user-attachments/assets/4f4305fc-7308-41d6-a0a6-e5f64473799e)
+![MainMenu](https://github.com/user-attachments/assets/0e87fc9a-e5a8-4b80-bb06-bc081b354be6)
 
 ## Recommended IDE Setup
 
