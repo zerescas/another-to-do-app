@@ -16,6 +16,7 @@
 .todo-item .todo-content {
   background-color: transparent;
   border: none;
+  color: inherit;
   font-size: inherit;
   outline: none;
   resize: none;
