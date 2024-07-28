@@ -87,6 +87,9 @@ const buttons = ref<Array<MainMenuButtonProps>>([
 <style scoped>
 .menu-wrapper {
   display: block;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
 }
 
 .title {
@@ -131,6 +134,9 @@ const buttons = ref<Array<MainMenuButtonProps>>([
     grid-template-areas:
       'title              buttons-list'
       'small-buttons-list buttons-list';
+    margin: 0;
+    max-width: unset;
+    width: unset;
   }
 
   .title {
