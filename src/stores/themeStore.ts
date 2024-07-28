@@ -31,6 +31,7 @@ export const useThemeStore = defineStore('theme', {
   actions: {
     setTheme(theme: Themes) {
       this.currentTheme = theme;
+      this.saveThemeToLocalStorage();
     },
 
     setIsDarkThemeOnDevice(isDarkThemeOnDevice: boolean) {
