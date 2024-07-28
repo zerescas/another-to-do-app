@@ -155,8 +155,8 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
 }
 
 .menu-button svg {
-  width: 65%;
   height: 65%;
+  width: 65%;
 }
 
 .menu-item {

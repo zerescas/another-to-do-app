@@ -67,8 +67,8 @@ function pressCloseButton() {
   display: flex;
   inset: 0;
   overflow: auto;
-  position: absolute;
   pointer-events: none;
+  position: absolute;
   z-index: 1000;
 }
 
