@@ -89,6 +89,7 @@ function pressCloseButton() {
 .popup-close-button {
   background-color: transparent;
   border: none;
+  color: inherit;
   cursor: pointer;
   font-size: 24px;
   font-weight: 500;
