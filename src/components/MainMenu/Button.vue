@@ -91,16 +91,15 @@ const props = defineProps({
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .button {
-    background-color: transparent;
-    border: solid 3px var(--button-color-background);
-    color: var(--button-color-background);
-  }
+/* Dark theme */
+[data-theme='dark'] .button {
+  background-color: transparent;
+  border: solid 3px var(--button-color-background);
+  color: var(--button-color-background);
+}
 
-  .button:hover {
-    background-color: var(--button-color-background);
-    color: var(--theme-color-background);
-  }
+[data-theme='dark'] .button:hover {
+  background-color: var(--button-color-background);
+  color: var(--theme-color-background);
 }
 </style>

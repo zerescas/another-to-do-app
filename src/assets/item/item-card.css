@@ -33,14 +33,13 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .item-card {
-    background: var(--theme-color-item-card-background);
-  }
+/* Dark theme */
+[data-theme='dark'] .item-card {
+  background: var(--theme-color-item-card-background);
+}
 
-  .item-card--decorated::before {
-    box-shadow: none;
-    height: 4px;
-    width: 100%;
-  }
+[data-theme='dark'] .item-card--decorated::before {
+  box-shadow: none;
+  height: 4px;
+  width: 100%;
 }

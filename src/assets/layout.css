@@ -16,6 +16,11 @@
   padding: 18px;
 }
 
+/* Modifier that adds ability to scroll layout's content */
+.app-layout--scrollable {
+  overflow: auto;
+}
+
 .app-layout--content {
   flex-grow: 1;
 }

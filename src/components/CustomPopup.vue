@@ -62,8 +62,7 @@ function pressCloseButton() {
 }
 
 .popup {
-  backdrop-filter: blur(12px);
-  background-color: #eeeeee8e;
+  background-color: #e7e7e7f1;
   display: flex;
   inset: 0;
   overflow: auto;
@@ -89,6 +88,7 @@ function pressCloseButton() {
 .popup-close-button {
   background-color: transparent;
   border: none;
+  color: inherit;
   cursor: pointer;
   font-size: 24px;
   font-weight: 500;
@@ -100,9 +100,8 @@ function pressCloseButton() {
   margin-top: 24px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .popup {
-    background-color: #00000080;
-  }
+/* Dark theme */
+[data-theme='dark'] .popup {
+  background-color: #000000da;
 }
 </style>

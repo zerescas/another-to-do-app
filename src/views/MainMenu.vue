@@ -10,6 +10,7 @@ import IconSettings from '../components/icons/IconSettings.vue';
 import IconAbout from '../components/icons/IconAbout.vue';
 import CustomPopup from '@/components/CustomPopup.vue';
 import AboutView from './AboutView.vue';
+import SettingsView from './SettingsView.vue';
 
 const router = useRouter();
 
@@ -17,6 +18,7 @@ const taskStore = useTaskStore();
 const projectStore = useProjectStore();
 
 const isAboutPopupOpened = ref(false);
+const isSettingsPopupOpened = ref(false);
 
 const tasksWithoutProjectPinCount = computed(() => `${taskStore.tasksWithoutProjectPin.length}`);
 
@@ -62,7 +64,7 @@ const buttons = ref<Array<MainMenuButtonProps>>([
       </div>
 
       <div class="small-buttons-list">
-        <SmallButton>
+        <SmallButton @click="isSettingsPopupOpened = true">
           <IconSettings :style="`width: 60%; height: 60%;`" />
         </SmallButton>
 
@@ -73,13 +75,24 @@ const buttons = ref<Array<MainMenuButtonProps>>([
     </div>
   </div>
 
-  <Teleport :to="`#app`">
+  <Teleport :to="`#popup`">
     <CustomPopup
       :isPopupOpened="isAboutPopupOpened"
       :contentWrapperClass="'app-layout app-layout--centered app-layout--padding about-popup-wrapper'"
       @closePressed="isAboutPopupOpened = false"
     >
       <AboutView />
+    </CustomPopup>
+  </Teleport>
+
+  <Teleport :to="`#popup`">
+    <CustomPopup
+      :isPopupOpened="isSettingsPopupOpened"
+      :contentWrapperClass="'app-layout app-layout--centered app-layout--padding settings-popup-wrapper'"
+      :headerTitle="'Settings'"
+      @closePressed="isSettingsPopupOpened = false"
+    >
+      <SettingsView />
     </CustomPopup>
   </Teleport>
 </template>
@@ -119,6 +132,10 @@ const buttons = ref<Array<MainMenuButtonProps>>([
   display: flex;
   gap: 12px;
   justify-content: flex-end;
+}
+
+:deep(.settings-popup-wrapper) {
+  max-width: 600px;
 }
 
 @media (min-width: 768px) {

@@ -118,7 +118,6 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
   flex-direction: column;
   flex-grow: 1;
   gap: 12px;
-  overflow: hidden auto;
 }
 
 .menu {
@@ -138,6 +137,7 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
   transition:
     transform 0.35s,
     opacity 0.35s;
+  width: fit-content;
 }
 
 .menu-button {
@@ -160,7 +160,9 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
 }
 
 .menu-item {
-  transition: transform 0.25s ease-out;
+  transition:
+    transform 0.25s ease-out,
+    margin-right 0.27s ease-out;
 }
 
 .menu.opened .menu-buttons {
@@ -169,6 +171,7 @@ function openToDoMenu(toDo: ToDo & MenuItemState) {
 }
 
 .menu.opened .menu-item {
+  margin-right: 150px;
   transform: translateX(150px);
 }
 
