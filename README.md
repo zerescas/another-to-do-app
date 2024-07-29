@@ -14,6 +14,10 @@ https://github.com/user-attachments/assets/0ad48972-13d0-4bf9-8002-070b5fac9f35
 
 https://github.com/user-attachments/assets/fa66093d-1035-4cc1-9d4c-896da7f2655d
 
+### Reset app data to defaults
+
+https://github.com/user-attachments/assets/29ea0c40-b5ac-462c-9a96-851d9a71f55e
+
 ### Popup "About"
 
 https://github.com/user-attachments/assets/5a5284ae-c014-4b3d-aab0-ab664254b48a
