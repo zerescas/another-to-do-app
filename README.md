@@ -4,6 +4,28 @@ Hey, this is another to do app based on 'create-vue' template.
 
 ![MainMenu](https://github.com/user-attachments/assets/0e87fc9a-e5a8-4b80-bb06-bc081b354be6)
 
+## Features
+
+### Tasks / Projects Management
+
+https://github.com/user-attachments/assets/91dc7a7b-0066-469b-9ba0-0ddb8028fd37
+
+### Switch the app theme (Light / Dark / Device)
+
+https://github.com/user-attachments/assets/0ad48972-13d0-4bf9-8002-070b5fac9f35
+
+### Sync with a device's theme when Theme = "Device"
+
+https://github.com/user-attachments/assets/fa66093d-1035-4cc1-9d4c-896da7f2655d
+
+### Reset app data to defaults
+
+https://github.com/user-attachments/assets/29ea0c40-b5ac-462c-9a96-851d9a71f55e
+
+### Popup "About"
+
+https://github.com/user-attachments/assets/5a5284ae-c014-4b3d-aab0-ab664254b48a
+
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
