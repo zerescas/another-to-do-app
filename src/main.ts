@@ -6,8 +6,8 @@ import PrimeVue from 'primevue/config';
 
 import App from './App.vue';
 import router from './router';
-import { initPiniaStores } from './assets/pinia-init';
-import { modifyRouterPush } from './assets/router-mod';
+import { initPiniaStores } from '@/assets/ts/pinia-init';
+import { modifyRouterPush } from '@/assets/ts/router-mod';
 
 const app = createApp(App);
 
