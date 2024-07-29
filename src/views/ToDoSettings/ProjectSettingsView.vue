@@ -9,7 +9,7 @@ import ToDoList from '@/components/ToDoList.vue';
 import CustomColorSelector from '@/components/CustomColorSelector.vue';
 import type { NavBarSettings } from '@/types/navbar-settings';
 import type { Project } from '@/types/project';
-import '@/assets/todo-settings/common.css';
+import '@/assets/css/todo-settings/common.css';
 import type { Task } from '@/types/task';
 import { pinTaskToProject } from '@/stores/common/pin-task-to-project';
 

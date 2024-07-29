@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue';
 import CustomPopup from '@/components/CustomPopup.vue';
-import '@/assets/item/item-card.css';
-import '@/assets/todo-settings/common.css';
+import '@/assets/css/item/item-card.css';
+import '@/assets/css/todo-settings/common.css';
 import { initPiniaStores } from '@/assets/ts/pinia-init';
 import { useThemeStore } from '@/stores/themeStore';
 

@@ -12,7 +12,7 @@ import CustomPopup from '@/components/CustomPopup.vue';
 import type { NavBarSettings } from '@/types/navbar-settings';
 import type { Task } from '@/types/task';
 import type { Project } from '@/types/project';
-import '@/assets/todo-settings/common.css';
+import '@/assets/css/todo-settings/common.css';
 
 const route = useRoute();
 const routeItemId = route.params.id;

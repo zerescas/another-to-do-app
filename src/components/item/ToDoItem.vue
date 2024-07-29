@@ -3,8 +3,8 @@ import Textarea from 'primevue/textarea';
 import CustomCheckbox from '@/components/CustomCheckbox.vue';
 import type { ToDo } from '@/types/todo';
 import type { PropType } from 'vue';
-import '@/assets/item/item-card.css';
-import '@/assets/item/todo/todo-item.css';
+import '@/assets/css/item/item-card.css';
+import '@/assets/css/item/todo/todo-item.css';
 import type { ToDoItemSettings } from '@/types/todo-item-settings';
 import type { Project } from '@/types/project';
 

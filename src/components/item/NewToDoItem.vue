@@ -2,8 +2,8 @@
 import Textarea from 'primevue/textarea';
 import type { ToDo } from '@/types/todo';
 import { ref, type PropType } from 'vue';
-import '@/assets/item/item-card.css';
-import '@/assets/item/todo/todo-item.css';
+import '@/assets/css/item/item-card.css';
+import '@/assets/css/item/todo/todo-item.css';
 
 const toDoContentRef = ref<InstanceType<typeof Textarea>>();
 
