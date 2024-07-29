@@ -7,7 +7,7 @@ import '@/assets/css/item/todo/todo-item.css';
 
 const toDoContentRef = ref<InstanceType<typeof Textarea>>();
 
-const toDo = ref<ToDo>({
+const toDo = ref<Partial<ToDo>>({
   content: '',
   color: 'white',
 });
