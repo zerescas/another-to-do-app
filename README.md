@@ -6,6 +6,14 @@ Hey, this is another to do app based on 'create-vue' template.
 
 ## Features
 
+### Switch the app theme (Light / Dark / Device)
+
+https://github.com/user-attachments/assets/0ad48972-13d0-4bf9-8002-070b5fac9f35
+
+### Sync with a device's theme when Theme = "Device"
+
+https://github.com/user-attachments/assets/fa66093d-1035-4cc1-9d4c-896da7f2655d
+
 ### Popup "About"
 
 https://github.com/user-attachments/assets/5a5284ae-c014-4b3d-aab0-ab664254b48a
