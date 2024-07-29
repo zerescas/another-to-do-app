@@ -6,6 +6,10 @@ Hey, this is another to do app based on 'create-vue' template.
 
 ## Features
 
+### Tasks / Projects Management
+
+https://github.com/user-attachments/assets/91dc7a7b-0066-469b-9ba0-0ddb8028fd37
+
 ### Switch the app theme (Light / Dark / Device)
 
 https://github.com/user-attachments/assets/0ad48972-13d0-4bf9-8002-070b5fac9f35
