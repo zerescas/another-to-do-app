@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import tsLogo from '@/assets/img/achieved-with/ts-logo.webp';
+import vueLogo from '@/assets/img/achieved-with/vue-logo.webp';
+import primevueLogo from '@/assets/img/achieved-with/primevue-logo.webp';
+
 interface AchievedWith {
   name?: string;
   imagePath: string;
@@ -8,17 +12,17 @@ interface AchievedWith {
 const achievedWithItems: Array<AchievedWith> = [
   {
     name: 'TypeScript',
-    imagePath: '/src/assets/img/achieved-with/ts-logo.webp',
+    imagePath: tsLogo,
     cssClass: 'achieved-with-ts',
   },
   {
     name: 'Vue',
-    imagePath: '/src/assets/img/achieved-with/vue-logo.webp',
+    imagePath: vueLogo,
     cssClass: 'achieved-with-vue',
   },
   {
     name: '"Textarea" from PrimeVue',
-    imagePath: '/src/assets/img/achieved-with/primevue-logo.webp',
+    imagePath: primevueLogo,
     cssClass: 'achieved-with-primevue',
   },
 ];
